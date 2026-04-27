@@ -55,7 +55,7 @@ NIE Secrets im Code. Immer:
 
 Secrets die mala braucht:
 - `NOTION_TOKEN` (Notion-Integration)
-- `DRIVE_SERVICE_ACCOUNT_KEY` (Drive-MCP)
+- `DROPBOX_APP_KEY` + `DROPBOX_APP_SECRET` + `DROPBOX_REFRESH_TOKEN` (Dropbox-MCP)
 - `AMAZON_SP_API_CLIENT_ID` (für P03)
 - `AMAZON_SP_API_CLIENT_SECRET` (für P03)
 - `ANTHROPIC_API_KEY` (Claude API)

@@ -29,9 +29,9 @@ Bei jedem Skill und Workflow:
 
 1. Lese GitHub-Repo Struktur (dieses Repo)
 2. Folge Notion-Page-Links für Wissen und Prozesse
-3. Greife Drive-Files nur wenn explizit verlinkt
+3. Greife Dropbox-Files nur wenn explizit verlinkt
 
-NIE alle Drive-Files in den Kontext laden. NIE Notion-Pages dupliziert in GitHub. NIE GitHub-Code in Notion kopieren.
+NIE alle Dropbox-Files in den Kontext laden. NIE Notion-Pages dupliziert in GitHub. NIE GitHub-Code in Notion kopieren.
 
 ## Memory
 
@@ -54,7 +54,7 @@ Jeder Skill hat:
 - `SKILL.md` (Trigger-Beschreibung + Voice-Reference)
 - `references/` (optionale Referenz-Files)
 - Eindeutige Notion-Page als Knowledge-Anker
-- Eindeutige Drive-Folder wenn Long-Form Content nötig
+- Eindeutige Dropbox-Folder wenn Long-Form Content nötig
 
 Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 
@@ -63,7 +63,7 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - AI-Models: Claude Sonnet 4.6 (default), Claude Opus 4.7 (für komplexe Decisions)
 - Backend (P03 Phase 1): VM-Stack-Skelett (WeWeb + Xano + n8n zu Full-Code), Phase 2 Custom-Stack TBD
 - Frontend (P03): TBD nach VM-Phase-1
-- Memory: GitHub + Notion (Open API) + Drive (defils only)
+- Memory: GitHub + Notion (Open API) + Dropbox (files only)
 - Automation: NICHT N8N (deprecated). Server-gehostete Cloud-Code-Workflows.
 
 ## Out-of-Scope für AI
@@ -71,5 +71,5 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - Keine Investment- oder Finanzberatung
 - Keine Trades, Käufe, Money-Transfers
 - Keine destructive Git-Operations ohne User-Approval
-- Keine permanenten Löschungen (Notion-Archive, Drive-Trash)
+- Keine permanenten Löschungen (Notion-Archive, Dropbox-Trash)
 - Keine Modifikation von Security-Permissions ohne explizite User-Anweisung

@@ -13,7 +13,7 @@ Python und Shell Scripts für Automation, Dev-Tooling, einmalige Migrationen.
 
 (Wird gefüllt sobald Scripts existieren. Beispiele:)
 
-- `scripts/sync_drive_to_notion.py` - Drive-Files in Notion-Pages embedden
+- `scripts/sync_dropbox_to_notion.py` - Dropbox-Files in Notion-Pages embedden
 - `scripts/migrate_n8n_to_code.py` - N8N-Workflows zu Python-Code (one-time)
 - `scripts/score_call_transcript.py` - Call-Analytics-Bot CLI
 
@@ -37,7 +37,9 @@ Scripts laden Secrets aus `.env.local` (gitignored) oder GitHub-Secrets bei CI/C
 ```bash
 # .env.local Beispiel
 NOTION_TOKEN=secret_xxx
-DRIVE_SERVICE_ACCOUNT_KEY=path/to/key.json
+DROPBOX_APP_KEY=xxx
+DROPBOX_APP_SECRET=xxx
+DROPBOX_REFRESH_TOKEN=xxx
 ANTHROPIC_API_KEY=sk-ant-xxx
 ```
 
@@ -47,4 +49,4 @@ Scripts haben Unit-Tests in `scripts/tests/`. Run via `pytest scripts/tests/`.
 
 ## CI/CD
 
-GitHub Actions führt Scripts bei Bedarf aus (z. B. wöchentliche Drive-Notion-Sync). Definitions in `.github/workflows/`.
+GitHub Actions führt Scripts bei Bedarf aus (z. B. wöchentliche Dropbox-Notion-Sync). Definitions in `.github/workflows/`.

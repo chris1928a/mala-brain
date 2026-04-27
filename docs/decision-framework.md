@@ -114,7 +114,7 @@ Für strategische Entscheidungen, die mehr als nur eine schnelle Bauchentscheidu
 - 27.04.2026: Tech-Team-Komposition zu Decision W7 (VM + Junior + Senior-Reviewer)
 - 27.04.2026: Founder-Build? zu Decision F4 (Pairing, nicht Solo-Build)
 
-Volle Beispiele in Drive: `mala P03 Big Decision Framework - VM/Inhouse + Tech-Team + Founder-Build (27.04.2026)`
+Volle Beispiele in Dropbox: `mala P03 Big Decision Framework - VM/Inhouse + Tech-Team + Founder-Build (27.04.2026)`
 
 ## Notion-Page-Konvention für Decisions
 

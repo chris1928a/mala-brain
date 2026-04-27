@@ -22,7 +22,7 @@ Saubere, modulare AI-Architektur für mala markets. Single Source of Truth für 
                                    │
                                    ▼
                     ┌──────────────────────────────────┐
-                    │   Google Drive (mala Drive)      │
+                    │   Dropbox (mala Dropbox)         │
                     │   = nur Long-Form Files          │
                     │   = Copy, Briefings, PDFs        │
                     └──────────────────────────────────┘
@@ -41,11 +41,11 @@ Saubere, modulare AI-Architektur für mala markets. Single Source of Truth für 
 - Settings
 
 **Was NICHT hier lebt:**
-- Long-Form Copy (geht in Drive)
+- Long-Form Copy (geht in Dropbox)
 - Meeting-Notes (gehen in Notion)
-- Kundendaten (gehen in Notion oder Drive je nach Sensitivität)
+- Kundendaten (gehen in Notion oder Dropbox je nach Sensitivität)
 
-**Regel:** GitHub ist die Architektur, nicht der Inhalt. Inhalte werden über Links (Notion-URL, Drive-URL) referenziert.
+**Regel:** GitHub ist die Architektur, nicht der Inhalt. Inhalte werden über Links (Notion-URL, Dropbox-URL) referenziert.
 
 ## Ebene 2: Notion
 
@@ -60,7 +60,7 @@ Saubere, modulare AI-Architektur für mala markets. Single Source of Truth für 
 
 **Verlinkungs-Regel:**
 - Skills in GitHub referenzieren Notion-Pages über URL
-- Notion-Pages referenzieren Drive-Files über URL
+- Notion-Pages referenzieren Dropbox-Files über URL
 - KEIN Inhalt wird über mehrere Ebenen dupliziert
 
 **Notion-Konvention:**
@@ -68,7 +68,7 @@ Saubere, modulare AI-Architektur für mala markets. Single Source of Truth für 
 - Subseiten: Konkrete Prozesse, Meetings, Projekte
 - Tags: Status (Active, Archived, Decision Pending)
 
-## Ebene 3: Drive
+## Ebene 3: Dropbox
 
 **Was lebt hier:**
 - Long-Form Copy (Sales-Pitches, Case-Studies)
@@ -82,7 +82,7 @@ Saubere, modulare AI-Architektur für mala markets. Single Source of Truth für 
 - Code (geht in GitHub)
 - AI-Prompts (gehen in Skills)
 
-**Regel:** Drive ist nur für Files, die Notion nicht halten kann. Jeder Drive-File wird in einer Notion-Page verlinkt, sonst ist er nicht auffindbar für Cloud.
+**Regel:** Dropbox ist nur für Files, die Notion nicht halten kann. Jeder Dropbox-File wird in einer Notion-Page verlinkt, sonst ist er nicht auffindbar für Cloud.
 
 ## Cloud-Code-Flow
 
@@ -95,8 +95,8 @@ Cloud Code (in mala-brain Repo)
   ↓ liest Skill-Frontmatter
   ↓ findet Notion-Page-Link für P03-Prozess-Doku
   ↓ liest Notion-Page für aktuelle Spec + Edge-Cases
-  ↓ findet Drive-File-Link für Briefing-Vorlage
-  ↓ liest Drive-File NUR wenn nötig
+  ↓ findet Dropbox-File-Link für Briefing-Vorlage
+  ↓ liest Dropbox-File NUR wenn nötig
   ↓
   Output mit Voice-Rules zu User
 ```
@@ -109,7 +109,7 @@ Cross-Session Memory liegt in `memory/`. Index ist `MEMORY.md` (max 200 Zeilen).
 - `user_*.md`: User-Profile, Preferences
 - `feedback_*.md`: Korrekturen, Confirmations
 - `project_*.md`: Aktuelle Initiativen, Deadlines, Stakeholder
-- `reference_*.md`: Pointer auf externe Systeme (Notion-Page-IDs, Drive-Folder-IDs)
+- `reference_*.md`: Pointer auf externe Systeme (Notion-Page-IDs, Dropbox-Folder-Paths)
 
 **Was NICHT in Memory:**
 - Code-Patterns (sind im Code)
@@ -140,7 +140,7 @@ Architektur ist so designed, dass AI-Model-Switch < 30 Min Migration kostet.
 
 ## Sicherheit
 
-- Alle Token (Amazon SP-API, Notion, Drive) im GitHub Secrets, NICHT im Code
-- DSGVO: Customer-Data in Notion oder Drive, nicht im Code
-- 2FA für GitHub, Notion, Drive Accounts der Founders
+- Alle Token (Amazon SP-API, Notion, Dropbox) im GitHub Secrets, NICHT im Code
+- DSGVO: Customer-Data in Notion oder Dropbox, nicht im Code
+- 2FA für GitHub, Notion, Dropbox Accounts der Founders
 - Repo ist private, nur Lars + Matteo + Chris haben Zugriff (+ ggf. Junior-Hire later)

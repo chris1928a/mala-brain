@@ -16,8 +16,8 @@ Quelle: https://x.com/garrytan/status/2042925773300908103
 
 1. **Fat Skills:** Domänen-Logik, Voice-Rules, Decision-Frameworks leben in Skills (in `skills/`). Jeder Skill ist ein eigenständiges, wiederverwendbares Modul mit klaren Triggern und Outputs.
 2. **Thin Harness:** Cloud Code ist der minimale Orchestrator. Er lädt Skills nur on-demand, verkettet sie nicht, hält keinen Eigenstate. Was Cloud kann, kommt aus den Skills.
-3. **Deterministic Glue:** Verbindungen zwischen Skills (GitHub-Repo, Notion-Pages, Drive-Files) sind explizit, dokumentiert, reproduzierbar. Keine versteckten Cloud-Memorys oder ChatGPT-Conversations als Knowledge-Layer.
-4. **Single Source of Truth:** Pro Information genau ein Speicherort. GitHub für Architektur, Notion für Wissen, Drive für Long-Form. Keine Duplikate, keine parallelen Wahrheiten.
+3. **Deterministic Glue:** Verbindungen zwischen Skills (GitHub-Repo, Notion-Pages, Dropbox-Files) sind explizit, dokumentiert, reproduzierbar. Keine versteckten Cloud-Memorys oder ChatGPT-Conversations als Knowledge-Layer.
+4. **Single Source of Truth:** Pro Information genau ein Speicherort. GitHub für Architektur, Notion für Wissen, Dropbox für Long-Form. Keine Duplikate, keine parallelen Wahrheiten.
 5. **Modell-Agnostik:** Skills und Memory sind unabhängig vom AI-Modell. Wenn Sonnet 5.0 kommt, switchen wir das Modell, nicht die Skills.
 
 **Warum dieser Pattern für mala?**
@@ -37,13 +37,13 @@ GitHub (Datenspeicher / Architektur)
    ↓
 Notion (Wissens- und Informationsspeicher)
    ↓
-Drive (nur Dateien / Long-Form Content)
+Dropbox (nur Dateien / Long-Form Content)
 ```
 
 **Flow für jeden Skill:**
 1. Skill startet in Cloud Code
 2. Cloud liest GitHub (diese Repo), findet Notion-Page-Link
-3. Cloud liest Notion-Page, findet Drive-File-Link (wenn nötig)
+3. Cloud liest Notion-Page, findet Dropbox-File-Link (wenn nötig)
 4. Cloud arbeitet mit nur den relevanten Files, ohne Müll-Kontext
 
 ## Folder-Struktur
@@ -62,7 +62,7 @@ Drive (nur Dateien / Long-Form Content)
 
 1. Diesen Folder als GitHub-Repo nach `mala-markets/mala-brain` pushen (private)
 2. Notion-Workspace strukturieren nach `docs/notion-linking.md`
-3. Drive-Folder strukturieren nach `docs/drive-linking.md`
+3. Dropbox-Folder strukturieren nach `docs/dropbox-linking.md`
 4. Cloud Code Setup: bei jedem mala-Repo `CLAUDE.md` referenzieren
 5. Voice-Rules aus `docs/voice-rules.md` in alle AI-Skills übernehmen
 6. Skill-Templates in `skills/relevio-dashboard/` und `skills/call-analytics/` als Vorlage nutzen
@@ -72,7 +72,7 @@ Drive (nur Dateien / Long-Form Content)
 - **Voice-Rules (für jeden AI-Output):** [docs/voice-rules.md](docs/voice-rules.md)
 - **Architektur-Doku:** [docs/architecture.md](docs/architecture.md)
 - **Notion-Verlinkung:** [docs/notion-linking.md](docs/notion-linking.md)
-- **Drive-Verlinkung:** [docs/drive-linking.md](docs/drive-linking.md)
+- **Dropbox-Verlinkung:** [docs/dropbox-linking.md](docs/dropbox-linking.md)
 - **Memory-Index:** [memory/MEMORY.md](memory/MEMORY.md)
 
 ## Wichtige Voice-Rules (Auszug)

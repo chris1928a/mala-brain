@@ -59,17 +59,17 @@ notion_pages:
 
 Cloud lädt diese Notion-URLs nur wenn Skill aktiv triggered.
 
-## Verlinkungs-Regel zwischen Notion und Drive
+## Verlinkungs-Regel zwischen Notion und Dropbox
 
-**Notion-Page referenziert Drive-File:**
+**Notion-Page referenziert Dropbox-File:**
 
 In der Notion-Page ein Embed oder Link:
 - Embed-Block für PDFs (Notion zeigt Preview)
-- Link-Block für Google Docs (Native-Embed)
+- Dropbox-Shared-Link (Native-Preview wenn Domain whitelisted)
 - Externer Link für andere Files
 
 **Beispiel:**
-> Briefing v1.0: [VM_Briefing_v1.docx](https://docs.google.com/document/d/...)
+> Briefing v1.0: [VM_Briefing_v1.docx](https://www.dropbox.com/scl/fi/.../VM_Briefing_v1.docx?dl=0)
 
 ## Notion-Page-Naming
 
@@ -101,8 +101,8 @@ Cloud kann Notion über die Notion-MCP querien. Pattern:
 1. Search Notion mit Keyword (z. B. "Listing-Optimierung")
 2. Fetch Top-Result Page-ID
 3. Lese Page-Inhalt
-4. Finde verlinkte Drive-Files (wenn nötig)
-5. Lese Drive-Files (nur wenn nötig)
+4. Finde verlinkte Dropbox-Files (wenn nötig)
+5. Lese Dropbox-Files (nur wenn nötig)
 ```
 
-NIE Drive-Files vorab laden. NIE Notion-Pages, die nicht im Skill referenziert sind, einlesen.
+NIE Dropbox-Files vorab laden. NIE Notion-Pages, die nicht im Skill referenziert sind, einlesen.

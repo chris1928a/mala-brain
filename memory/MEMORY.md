@@ -31,7 +31,7 @@ Memory-Files sind in der gleichen Folder. Index wird automatisch von Cloud Code 
 ## Reference (External Systems)
 
 - [reference_notion_workspace.md](reference_notion_workspace.md) - mala Notion-Workspace-Struktur (5 Top-Level-Departments)
-- [reference_drive_folders.md](reference_drive_folders.md) - Drive-Folder-Struktur (Customer-Files + Internal + Assets)
+- [reference_dropbox_folders.md](reference_dropbox_folders.md) - Dropbox-Folder-Struktur (Customer-Files + Internal + Assets)
 - [reference_vm_contacts.md](reference_vm_contacts.md) - Visual Makers GmbH Köln, Lead Luka Weingärtner
 - [reference_funding_details.md](reference_funding_details.md) - Förder-Funding ~25-30k EUR übrig, extern Pflicht
 
