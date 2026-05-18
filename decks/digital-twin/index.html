@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<title>Mala Digital Company Twin, Erler Ventures fuer mala markets, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #7c3aed;
+    --accent-deep: #6d28d9;
+    --accent-soft: #f5f3ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --red: #dc2626;
+    --green: #16a34a;
+    --slate: #475569;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide {
+    width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+    display: none; padding: 11vh 11vw;
+    flex-direction: column; justify-content: center;
+    background: var(--bg);
+  }
+  .slide.active { display: flex; }
+
+  .label {
+    position: absolute; top: 6vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
+
+  .page-num {
+    position: absolute; bottom: 5vh; right: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  }
+  .brand {
+    position: absolute; bottom: 5vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* COVER */
+  .cover-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 2.5rem;
+  }
+  h1.cover-title {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.02;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem; max-width: 22ch;
+  }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 62ch; line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem; font-weight: 400; color: var(--text);
+    letter-spacing: 0.01em; line-height: 1.7;
+  }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
+
+  h2.title {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05;
+    letter-spacing: -0.035em; color: var(--text);
+    margin-bottom: 3.5rem; max-width: 24ch;
+  }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
+
+  /* PAIN CELLS */
+  .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+  .pain { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--bg); }
+  .pain .pn { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); }
+  .pain .pt { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; line-height: 1.3; }
+  .pain .pd { font-size: 0.82rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .pain-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 78ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .pain-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* TWO-LAYER STACK */
+  .twolayer { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .tl-row { display: grid; grid-template-columns: 0.35rem 7rem 1fr; gap: 1.5rem; align-items: center; padding: 1.4rem 0.5rem; border-bottom: 1px solid var(--border); }
+  .tl-row:first-child { border-top: 2px solid var(--accent); }
+  .tl-row.foundation { border-bottom: 2px solid var(--slate); background: #f8fafc; padding-left: 0; padding-right: 0; border-radius: 0; }
+  .tl-bar { background: var(--accent); height: 3rem; border-radius: 2px; }
+  .tl-row.foundation .tl-bar { background: var(--slate); }
+  .tl-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .tl-row.foundation .tl-tag { color: var(--slate); }
+  .tl-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .tl-name { font-weight: 700; font-size: 1.35rem; color: var(--text); letter-spacing: -0.015em; }
+  .tl-desc { font-weight: 400; font-size: 0.92rem; color: var(--muted); line-height: 1.5; }
+  .tl-desc strong { color: var(--text); font-weight: 600; }
+  .twolayer-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .twolayer-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* LAYER STACK */
+  .layer-stack { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .l-row { display: grid; grid-template-columns: 0.35rem 6rem 1fr; gap: 1.5rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .l-row:first-child { border-top: 1px solid var(--border); }
+  .l-bar { background: var(--accent); height: 2.2rem; border-radius: 2px; }
+  .l-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .l-body { display: flex; flex-direction: column; gap: 0.15rem; }
+  .l-name { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .l-desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .l-desc strong { color: var(--text); font-weight: 600; }
+  .layer-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .layer-foot strong { color: var(--accent); }
+
+  /* DECISIONS TABLE */
+  .dec-table { width: 100%; border-collapse: collapse; }
+  .dec-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .dec-table td { padding: 0.75rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.85rem; vertical-align: top; line-height: 1.4; }
+  .dec-table .dec { font-weight: 700; color: var(--text); }
+  .dec-table .dec small { display: block; color: var(--muted); font-weight: 400; font-size: 0.72rem; margin-top: 0.2rem; }
+  .dec-table .cat { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .dec-table .rec { color: var(--text); font-size: 0.82rem; }
+  .dec-table .rec strong { color: var(--accent); font-weight: 600; }
+
+  /* HUB-AND-SPOKE */
+  .hub { display: flex; justify-content: center; align-items: center; flex: 1; margin: 0.5rem 0 1.25rem; }
+  .hub svg { width: 100%; max-width: 920px; max-height: 50vh; height: auto; }
+  .hub-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 80ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .hub-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* COWORK FLOWS */
+  .flows { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 1.5rem; }
+  .flow-col { display: flex; flex-direction: column; gap: 0; }
+  .flow-head { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent); margin-bottom: 0.5rem; }
+  .flow-item { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  .flow-item:last-child { border-bottom: none; }
+  .flow-item .fn { font-weight: 700; font-size: 1.05rem; color: var(--accent); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .flow-item .fc { display: flex; flex-direction: column; gap: 0.2rem; }
+  .flow-item .ft { font-weight: 700; font-size: 0.95rem; color: var(--text); letter-spacing: -0.005em; }
+  .flow-item .fd { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .flow-item .fd strong { color: var(--text); font-weight: 600; }
+  .flow-item .fd code { font-family: var(--mono); font-size: 0.72rem; background: var(--code-bg); padding: 0.05rem 0.3rem; border-radius: 3px; color: var(--accent); }
+  .flows-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); max-width: 80ch; }
+  .flows-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* CASE */
+  .case-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 1.5rem; align-items: start; }
+  .case-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .case-stat .n { font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .case-stat .lbl { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; margin-top: 0.3rem; }
+  .case-stat .sub { font-size: 0.82rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+  .case-body { font-size: 1rem; color: var(--text); line-height: 1.65; }
+  .case-body p { margin-bottom: 0.85rem; }
+  .case-body strong { color: var(--accent); font-weight: 600; }
+  .case-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); font-style: italic; }
+  .case-foot .accent { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  /* PULL TABLE */
+  .pull-table { width: 100%; border-collapse: collapse; }
+  .pull-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .pull-table td { padding: 0.75rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.85rem; vertical-align: top; line-height: 1.4; }
+  .pull-table .file { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .pull-table .what { color: var(--text); font-weight: 500; }
+  .pull-foot { margin-top: 1rem; padding: 0.85rem 1.1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.85rem; line-height: 1.5; color: var(--text); border-radius: 0 4px 4px 0; }
+  .pull-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* TIERS */
+  .tiers { display: flex; flex-direction: column; }
+  .tier { display: grid; grid-template-columns: 5rem 1fr 1fr; gap: 2rem; align-items: baseline; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+  .tier:first-child { border-top: 1px solid var(--border); }
+  .tier .tg { font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .tier .desc { display: flex; flex-direction: column; gap: 0.25rem; }
+  .tier .dh { font-weight: 600; font-size: 1rem; color: var(--text); }
+  .tier .dd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .tier .who { font-size: 0.85rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+  .tier .who strong { color: var(--accent); font-weight: 700; }
+
+  /* STACK COLS */
+  .stack-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+  .sc { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; }
+  .sc.lead { border-color: var(--accent); border-width: 2px; background: var(--accent-soft); }
+  .sc .sct { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .sc.lead .sct { color: var(--accent); }
+  .sc .scn { font-weight: 700; font-size: 1.3rem; color: var(--text); letter-spacing: -0.015em; margin-top: 0.3rem; }
+  .sc.lead .scn { color: var(--accent); }
+  .sc .scd { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+  .sc .scd code { font-family: var(--mono); font-size: 0.78rem; background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--accent); }
+  .stack-foot { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .stack-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* MALA ADAPTION */
+  .yc-grid { display: grid; grid-template-columns: 6rem 1fr; gap: 1.5rem; row-gap: 0.5rem; margin-bottom: 1.5rem; }
+  .yc-grid .ytag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding-top: 1rem; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+  .yc-grid .ydesc { padding-top: 1rem; border-top: 1px solid var(--border); }
+  .yc-grid .ydesc strong { color: var(--text); font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.2rem; }
+  .yc-grid .ydesc span { color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; }
+  .yc-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); font-style: italic; }
+  .yc-foot strong { color: var(--accent); font-style: normal; font-weight: 700; }
+
+  /* MOAT */
+  .moat-quote { padding: 2rem 2.2rem; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; margin-bottom: 2.5rem; }
+  .moat-quote .q { font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.8rem); color: var(--text); line-height: 1.4; letter-spacing: -0.015em; margin-bottom: 1rem; }
+  .moat-quote .src { font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+  .moat-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .mp { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 1rem; border-top: 2px solid var(--accent); }
+  .mp .mph { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .mp .mpt { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .mp .mpd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+  /* PHASES */
+  .phases { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+  .phase { display: grid; grid-template-columns: 8rem 1fr; gap: 2.5rem; align-items: baseline; padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+  .phase:first-child { border-top: 1px solid var(--border); }
+  .phase .pp { font-weight: 700; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+  .phase .pcontent { display: flex; flex-direction: column; gap: 0.3rem; }
+  .phase .pt { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .phase .pd { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .eng-cta { margin-top: 1.25rem; padding: 1.1rem 1.4rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+  .eng-cta .ch { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .eng-cta .ct { font-weight: 600; font-size: 1.05rem; color: var(--text); line-height: 1.5; }
+  .eng-cta .ct a { color: var(--accent); text-decoration: none; font-weight: 700; }
+  .eng-cta .ct a:hover { text-decoration: underline; }
+
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
+
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .slide { padding: 7vh 7vw; }
+    .label { top: 4vh; left: 7vw; }
+    .page-num, .brand { bottom: 3vh; }
+    .page-num { right: 7vw; }
+    .brand { left: 7vw; }
+    .pains, .stack-cols, .moat-proof { grid-template-columns: 1fr; }
+    .case-hero, .flows { grid-template-columns: 1fr; gap: 1.5rem; }
+    .l-row, .tl-row { grid-template-columns: 0.3rem 1fr; }
+    .l-tag, .l-body, .tl-tag, .tl-body { grid-column: 2; }
+    .tier { grid-template-columns: 3rem 1fr; }
+    .tier .who { grid-column: 2; }
+    .yc-grid { grid-template-columns: 1fr; }
+    .yc-grid .ytag { border-top: 1px solid var(--border); padding-top: 1rem; }
+    .yc-grid .ydesc { border-top: none; padding-top: 0; }
+    .phase { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 COVER -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">Erler Ventures &times; mala markets &middot; Lars &amp; Matteo &middot; 19.05.2026</div>
+    <h1 class="cover-title">Das Mala Digital<br><span class="accent">Company Twin.</span></h1>
+    <p class="cover-sub">Zwei Layer auf einem Mala-Brain. Ein CEO Decision Cockpit fuer Lars und Matteo oben. Ein Team Cowork unten. Aus 6 Wochen Mapping wird das Operating System. 2026 live, 2028 euer 500k-Mandat-Produkt.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">Working Pitch &middot; Prep fuer den Call am 19.05.2026 09:00 CEST</span></p>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">01 / 15</div>
+  </section>
+
+  <!-- 02 CEO PAIN -->
+  <section class="slide" id="s2">
+    <div class="label">Worum es heute geht &middot; das Founder-Problem</div>
+    <h2 class="title">Ihr habt mehr Daten als je zuvor.<br><span class="accent">Und weniger Klarheit als je zuvor.</span></h2>
+    <div class="pains">
+      <div class="pain">
+        <div class="pn">Founder Pain 01</div>
+        <div class="pt">Wahrheit liegt in 6 Tools</div>
+        <div class="pd">Performance-Tools, CRM, Vision-Doc, Notion, Slack, im Kopf von Lars und im Kopf von Matteo. Keine spricht mit der anderen.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Founder Pain 02</div>
+        <div class="pt">Bis das Bild zusammen ist, ist das Decision-Window zu</div>
+        <div class="pd">Die meisten Mandate- und Pricing-Decisions laufen auf Gefuehl und letzte Slack-Nachricht. Nicht auf einem einheitlichen Frame.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Founder Pain 03</div>
+        <div class="pt">Keine Memory zwischen Decisions</div>
+        <div class="pd">Die gleiche Pricing-, Hire- oder Churn-Frage wird jedes Quartal neu diskutiert. Niemand loggt die Begruendung. Jedes Quartal ist Woche 1.</div>
+      </div>
+    </div>
+    <div class="pain-foot">Der Engpass ist nicht Daten. <span class="accent">Es ist der einheitliche Frame zum Denken.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">02 / 15</div>
+  </section>
+
+  <!-- 03 TEAM PAIN -->
+  <section class="slide" id="s3">
+    <div class="label">Worum es heute geht &middot; das Team-Problem</div>
+    <h2 class="title">Euer Team hat mehr Meetings als je zuvor.<br><span class="accent">Und weniger Shared Context als je zuvor.</span></h2>
+    <div class="pains">
+      <div class="pain">
+        <div class="pn">Team Pain 01</div>
+        <div class="pt">Wissen lebt in Koepfen</div>
+        <div class="pd">17 Prozesse gemappt seit 20.04. in Miro und Notion. Aber niemand nutzt das Brain (Matteo findet die Einstellungen nicht, WhatsApp 18.05.). Der Wert verteilt sich auf Kalender und Drive-Folder.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Team Pain 02</div>
+        <div class="pt">Lars sagt X, Matteo sagt Y, Team erinnert Z</div>
+        <div class="pd">Jeder hat seinen Stand. Niemand hat denselben Stand. Jede Decision wird zur Verhandlung zwischen Versionen der Wahrheit. Setup-Drift waechst pro Hire.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Team Pain 03</div>
+        <div class="pt">Jeder neue Hire startet den Kontext neu</div>
+        <div class="pd">Wochen "lass mich dich updaten" pro Rolle. Mit Junior-Dev-Hire 2026 wird das akut. Onboarding-Kosten unsichtbar, weil sie sich auf alle Kalender verteilen.</div>
+      </div>
+    </div>
+    <div class="pain-foot">Die Kosten sind nicht Software. <span class="accent">Es ist der verteilte Kontext, den euer Team jeden Tag neu rebuildet.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">03 / 15</div>
+  </section>
+
+  <!-- 04 TWO-LAYER SOLUTION -->
+  <section class="slide" id="s4">
+    <div class="label">Was wir bauen</div>
+    <h2 class="title">Zwei Layer.<br><span class="accent">Ein gemeinsames Mala-Brain darunter.</span></h2>
+    <div class="twolayer">
+      <div class="tl-row">
+        <div class="tl-bar"></div>
+        <div class="tl-tag">Layer 01</div>
+        <div class="tl-body">
+          <div class="tl-name">Founder Twin (Lars + Matteo)</div>
+          <div class="tl-desc">Strategische Decisions, <strong>laufen durch denselben 5-Layer-Frame</strong> jedes Mal. Lars und Matteo bleiben am Steuer. Der Twin faengt ab, was ihr uebersehen haettet, bevor die Decision ausgeliefert wird.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-bar"></div>
+        <div class="tl-tag">Layer 02</div>
+        <div class="tl-body">
+          <div class="tl-name">Team Twin</div>
+          <div class="tl-desc"><strong>Tagliche Kollaboration auf einem gemeinsamen Brain</strong>, statt in 6 verschiedenen Tools. Jede Rolle fuettert es. Jede Rolle nutzt es. Onboarding schrumpft von Wochen auf Tage.</div>
+        </div>
+      </div>
+      <div class="tl-row foundation">
+        <div class="tl-bar"></div>
+        <div class="tl-tag">Foundation</div>
+        <div class="tl-body">
+          <div class="tl-name">Mala-Brain</div>
+          <div class="tl-desc">Live-Daten aus CRM, Marketplace-Performance, Financial-Sheet, OKRs. GitHub-backed Truth. Jede Decision mit 30-Tage Outcome-Review geloggt. <strong>Eure Daten, kein Vendor dazwischen.</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="twolayer-foot">Jeder Layer ist alleine nuetzlich. <span class="accent">Zusammen compounden sie:</span> bessere Decisions, auf geteiltem Kontext, jeden Tag.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">04 / 15</div>
+  </section>
+
+  <!-- 05 LAYER 1: 5-LAYER FRAMEWORK -->
+  <section class="slide" id="s5">
+    <div class="label">Layer 1 &middot; wie der Founder Twin denkt</div>
+    <h2 class="title">5 Layer.<br><span class="accent">Jede strategische Decision laeuft durch sie, in dieser Reihenfolge.</span></h2>
+    <div class="layer-stack">
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 01</div>
+        <div class="l-body">
+          <div class="l-name">Sales + Mandate-Reality</div>
+          <div class="l-desc">Pipeline, Wons, aktive Mandate, Customer-Konzentration, Buy-Box-Stand, Marketplace-Velocity. <strong>Harte Fakten vor Meinungen.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 02</div>
+        <div class="l-body">
+          <div class="l-name">Financial Dashboard</div>
+          <div class="l-desc">Cashflow, Margin pro Mandat, Headcount-Load, Liqui-Trend, Retainer vs Project. <strong>Die Decision muss die P&amp;L ueberleben.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 03</div>
+        <div class="l-body">
+          <div class="l-name">Quarterly OKRs</div>
+          <div class="l-desc">Sprint-Bindung. <strong>Eine Decision, die den Sprint bricht, braucht einen lauteren Grund.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 04</div>
+        <div class="l-body">
+          <div class="l-name">Strategy Lock</div>
+          <div class="l-desc">ICP, Positioning, Pricing, Service-Tiers, Vivid Vision 2028, Strategic Marketplace Leadership Framework. <strong>Die gefrorenen Entscheidungen, die ihr schon bezahlt habt.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 05</div>
+        <div class="l-body">
+          <div class="l-name">Mentor Avatars</div>
+          <div class="l-desc">Pattern-Match gegen 3-5 der besten Marketplace-Advisors. <strong>Was wuerde der kluegere Peer dazu sagen?</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="layer-foot">Eine Decision, die <strong>3 oder mehr Layer widerspricht</strong>, triggert einen Stop-and-Think-Alert. Der Twin weigert sich, sie durchzuschieben.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">05 / 15</div>
+  </section>
+
+  <!-- 06 LAYER 1 IN ACTION - MALA DECISIONS -->
+  <section class="slide" id="s6">
+    <div class="label">Layer 1 in Action &middot; 5 Mala-Decisions die anstehen</div>
+    <h2 class="title" style="margin-bottom: 2rem;">So sieht eine Mala-Decision aus<br><span class="accent">durch den Founder Twin gefiltert.</span></h2>
+    <table class="dec-table">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Mala-Decision</th>
+          <th style="width: 12%;">Tier</th>
+          <th style="width: 60%;">5-Layer Frame</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dec">Mai-Test Hook + Sub-Segment<small>Asset Foundation Sprint, Matteo Demand 5</small></td>
+          <td class="cat">B - Weekly</td>
+          <td class="rec">&laquo;Marktplaetze gehoeren auf C-Level&raquo; gegen Marken 5-50M Amazon-aktiv. <strong>Layer 4 ICP-Lock zuerst. Layer 5 Build-in-Public-Hook-Pattern. Layer 2: 3-5k Budget, KPI Cost-per-Booked-Meeting.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Relevio Status<small>Sunset, Spin-off, Integration</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">Spin-off als separater Track. <strong>Layer 4 Vivid Vision 2028 erwaehnt Relevio nicht. Layer 1 SaaS-Logik vs Mandate-Logik kollidiert. Sunset entwertet 6 Monate Build.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Junior Dev intern vs Senior extern<small>Bereits 07.05. entschieden, Frame retro</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">Junior intern. <strong>Layer 2 sagt 27k einmalig + kein Knowhow-Aufbau. Layer 4 Mala-Brain braucht internes Owning. Der Twin haette denselben Frame geliefert.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">2-3 Mandate als 500k-Pilot 2027<small>Migrationspfad Vivid Vision</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">Top 3 Bestandskunden mit C-Level-Beziehung und Marketplace-Ausbau-Wille. <strong>Layer 1 Performance-Track plus Layer 4 Strategic-Fit. Layer 5 Pattern-Match gegen 500k-Mandate-Strukturen.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">17 Prozesse Automatisierungs-Reihenfolge<small>Impact-Effort-Matrix Stand 21.04.</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">A2 Client Onboarding + B1 Marketplace Content zuerst. <strong>Layer 1 Time-Saved-per-Mandat. Layer 2 Free-Capacity fuer Upsell. Layer 4 Framework-Alignment.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">06 / 15</div>
+  </section>
+
+  <!-- 07 LAYER 2 - TEAM TWIN VISUAL -->
+  <section class="slide" id="s7">
+    <div class="label">Layer 2 &middot; wie das Team auf einem Brain coworked</div>
+    <h2 class="title" style="margin-bottom: 1rem; font-size: clamp(1.85rem, 3.2vw, 2.8rem); max-width: 32ch;">Ein zentrales Mala-Brain.<br><span class="accent">Jeder fuettert es. Jeder nutzt es.</span></h2>
+    <div class="hub">
+      <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mala Team Rollen verbunden mit dem zentralen Mala-Brain">
+        <g stroke="#7c3aed" stroke-width="1.5" opacity="0.4" stroke-dasharray="5,4" fill="none">
+          <line x1="400" y1="200" x2="200" y2="80"/>
+          <line x1="400" y1="200" x2="600" y2="80"/>
+          <line x1="400" y1="200" x2="100" y2="200"/>
+          <line x1="400" y1="200" x2="700" y2="200"/>
+          <line x1="400" y1="200" x2="200" y2="320"/>
+          <line x1="400" y1="200" x2="600" y2="320"/>
+        </g>
+        <circle cx="400" cy="200" r="78" fill="#7c3aed"/>
+        <text x="400" y="194" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700" font-family="Inter, sans-serif">Mala-Brain</text>
+        <text x="400" y="218" text-anchor="middle" fill="#ddd6fe" font-size="9" font-weight="600" font-family="Inter, sans-serif" letter-spacing="2">LIVE &middot; GITHUB &middot; CLAUDE</text>
+
+        <g>
+          <rect x="120" y="50" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="200" y="78" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">Lars (Strategie)</text>
+          <text x="200" y="96" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Mandate, Pricing, C-Level</text>
+        </g>
+
+        <g>
+          <rect x="520" y="50" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="600" y="78" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">Matteo (Operations)</text>
+          <text x="600" y="96" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Performance, Funnel, Team</text>
+        </g>
+
+        <g>
+          <rect x="20" y="170" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="100" y="198" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">Account Manager</text>
+          <text x="100" y="216" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Mandate-Execution, Kunden</text>
+        </g>
+
+        <g>
+          <rect x="620" y="170" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="700" y="198" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">PPC + Content</text>
+          <text x="700" y="216" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Amazon, Otto, Kaufland</text>
+        </g>
+
+        <g>
+          <rect x="120" y="290" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="200" y="318" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">Sales + Outbound</text>
+          <text x="200" y="336" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">ICP-Match, Pipeline</text>
+        </g>
+
+        <g>
+          <rect x="520" y="290" width="160" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <text x="600" y="318" text-anchor="middle" fill="#09090b" font-size="15" font-weight="700" font-family="Inter, sans-serif">Junior Dev (intern)</text>
+          <text x="600" y="336" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Brain-Maintenance, Skripte</text>
+        </g>
+      </svg>
+    </div>
+    <div class="hub-foot">Transkripte, Decisions, Briefs flow <strong>rein</strong>. Eine Friday-Cowork-Session pullt Antworten <strong>raus</strong>. <strong>AI ersetzt nicht das Meeting. Sie macht das Meeting schaerfer.</strong></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">07 / 15</div>
+  </section>
+
+  <!-- 08 COWORK FLOWS -->
+  <section class="slide" id="s8">
+    <div class="label">Layer 2 in Action &middot; wie Team und Brain Kontext tauschen</div>
+    <h2 class="title">Das Team fuettert das Brain.<br><span class="accent">Das Brain fuettert zurueck.</span></h2>
+    <div class="flows">
+      <div class="flow-col">
+        <div class="flow-head">Was das Team rein gibt</div>
+        <div class="flow-item">
+          <div class="fn">01</div>
+          <div class="fc">
+            <div class="ft">Pull Requests gegen das mala-brain Repo</div>
+            <div class="fd">Sales legt Transkripte ab. Matteo updated Voice-Rules. Lars loggt eine Pricing-Decision. Account Manager ergaenzt Customer-Map. <strong>Das Brain versioniert sich selbst.</strong> Jede Aenderung reviewbar, revertibel, audit-trailed.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">02</div>
+          <div class="fc">
+            <div class="ft">Live Data Syncs auf Schedule</div>
+            <div class="fd"><code>sales_bridge.py</code> stuendlich. <code>marketplace_pull.py</code> alle 6h (Amazon SP-API, Otto, Kaufland). <code>pipeline_daily.py</code> Mo-Fr 18:30. <strong>Das Team fuettert das Brain, indem es arbeitet, nicht indem es uploadet.</strong></div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">03</div>
+          <div class="fc">
+            <div class="ft">Friday Cowork-Session</div>
+            <div class="fd">Lars + Matteo + Chris, online, Brain offen. Vergangene Woche reviewed, Risks dieser Woche gesurfaced, ein neuer Twin-Output live gedraftet. <strong>Die Session committed zurueck ins Brain.</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-col">
+        <div class="flow-head">Was das Brain zurueck gibt</div>
+        <div class="flow-item">
+          <div class="fn">01</div>
+          <div class="fc">
+            <div class="ft">Frame-checked Antworten in Slack oder Meeting</div>
+            <div class="fd">"Was sagt das Brain zu diesem Hire?" Twin zieht alle 5 Layer, gibt frame-stamped Empfehlung zurueck. <strong>20 Sekunden.</strong> Genau dort wo das Team eh schon arbeitet.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">02</div>
+          <div class="fc">
+            <div class="ft">Drafts im Lars- oder Matteo-Voice</div>
+            <div class="fd">Kunden-Replies, LinkedIn-Posts, interne Updates. <strong>Pattern-checked gegen die Voice-Library bevor sie das Brain verlassen.</strong> Founder reviewt, shipped.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">03</div>
+          <div class="fc">
+            <div class="ft">Risk-Flags bevor sie zubeissen</div>
+            <div class="fd">Pipeline-Stagnation, Customer-Konzentration, OKR-Drift, Stress-Signale vor einem Decision-Push. <strong>Das Brain surfaced sie im Morning Brief,</strong> nicht im naechsten Quartals-Review.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flows-foot">Das Brain ist kein Tool, das das Team oeffnet. <strong>Es ist der Layer hinter den Tools, die das Team eh schon nutzt.</strong></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">08 / 15</div>
+  </section>
+
+  <!-- 09 USE CASE - RC -->
+  <section class="slide" id="s9">
+    <div class="label">Use Case &middot; eine Recruiting-Agentur</div>
+    <h2 class="title">30 Leute. ~3M EUR ARR.<br><span class="accent">Beide Layer live, Woche eins.</span></h2>
+    <div class="case-hero">
+      <div>
+        <div class="case-stat">
+          <div class="n">30</div>
+          <div class="lbl">people</div>
+          <div class="sub">DACH B2B Tech Recruiting Agentur, hyper-growth, founder-led.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">3M&nbsp;EUR</div>
+          <div class="lbl">ARR</div>
+          <div class="sub">Hunderte Opportunities getrackt, Dutzende Wons, wachsende Pipeline ueber diversifizierte Kunden.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">85<span style="font-size: 0.5em;">%</span></div>
+          <div class="lbl">decision coverage</div>
+          <div class="sub">Operational seit 14.05.2026. Coverage waechst, waehrend das Team das Brain fuettert.</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <p>Der Founder-CEO hatte das gleiche Problem das jeder Founder hat: <strong>kein Mensch kann Sales, Delivery, Finance, OKRs, ICP und 4 Mentor-Patterns in einem Frame halten, in Echtzeit, waehrend eine Slack-Nachricht reinkommt.</strong></p>
+        <p>Wir haben das Twin-Pair gebaut. Layer 1 zieht jeden Layer der Firmen-Wahrheit in einen CEO-Decision-Frame. Layer 2 laesst das Team Briefs, Transkripte und Decisions ins gleiche Brain einbringen, im taeglichen Workflow.</p>
+        <p>Erste Woche live: <strong>5 frame-checked strategische Decisions geshipped.</strong> Performance-Management, Customer-Konzentration, Strategic Direction, Pricing Lock, Marketing Test. Jede mit 30-Tage Outcome-Review geloggt.</p>
+      </div>
+    </div>
+    <div class="case-foot">Kein Notion-Template. Kein Chatbot. <span class="accent">Ein arbeitendes Twin-Pair.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">09 / 15</div>
+  </section>
+
+  <!-- 10 LIVE PULLS -->
+  <section class="slide" id="s10">
+    <div class="label">Was unter der Haube laeuft</div>
+    <h2 class="title" style="margin-bottom: 2rem;">Alle Mala-Daten.<br><span class="accent">Live gepullt. Immer aktuell.</span></h2>
+    <table class="pull-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Skript</th>
+          <th style="width: 75%;">Was es tut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="file">sales_bridge.py</td>
+          <td class="what">Sales-CRM Live: Opportunities, Wons, Lost, Pipeline, Leads, Lost-Reasons. On-Demand-Snapshot mit kurzem Cache.</td>
+        </tr>
+        <tr>
+          <td class="file">marketplace_pull.py</td>
+          <td class="what">Amazon SP-API, Otto Partner, Kaufland: Sales-Velocity, Buy-Box, ACOS, Brand-Search-Volume pro Mandat.</td>
+        </tr>
+        <tr>
+          <td class="file">financial_pull.py</td>
+          <td class="what">Live Finance-Sheet Pull: P&amp;L pro Kunde, Margin pro Mandat, Headcount, Retainer-Tracking, Runway.</td>
+        </tr>
+        <tr>
+          <td class="file">pipeline_daily.py</td>
+          <td class="what">Daily Snapshot + Diff vs gestern + Risk-Flags (Stage-Stagnation, Overdue, Pipeline-Drops, Churn-Score-Spitzen).</td>
+        </tr>
+        <tr>
+          <td class="file">icp_match.py</td>
+          <td class="what">ICP-Klassifikation P1/P2/P3/OUT auf neue Leads aus Outbound-Pipeline. Matteos Email-Kampagne-Filterung als Pilot.</td>
+        </tr>
+        <tr>
+          <td class="file">stress_detector.py</td>
+          <td class="what">Pre-Decision Stress-Score ueber 4 Trigger-Kategorien. Refused-Push bei rotem Score, Pause-Template stattdessen.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pull-foot"><strong>Alles Python. Alles in git.</strong> ~200 Zeilen pro Pull. Kein Vendor. Kein n8n. Kein make.com. Cron + Lambda fuer die Schedules.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">10 / 15</div>
+  </section>
+
+  <!-- 11 AUTONOMY TIERS -->
+  <section class="slide" id="s11">
+    <div class="label">Lars und Matteo bleiben am Steuer</div>
+    <h2 class="title">Der Twin fliegt nicht die Maschine.<br><span class="accent">Er faengt ab, was ihr uebersehen haettet, bevor ihr entscheidet.</span></h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tg">A</div>
+        <div class="desc">
+          <div class="dh">Daily Tactical</div>
+          <div class="dd">Content-Thema, kleiner Tool-Trial, Outbound-Cadence-Tweak, Weekly Prios</div>
+        </div>
+        <div class="who"><strong>Twin entscheidet.</strong> Notification, keine Frage.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">B</div>
+        <div class="desc">
+          <div class="dh">Weekly Tactical</div>
+          <div class="dd">Outreach-Liste, Pricing-Variante fuer einzelnen Deal, Marketing-Hook-Variante, Sprint-Shape</div>
+        </div>
+        <div class="who"><strong>Twin empfiehlt.</strong> Quick-Approve in Slack oder Skip.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">C</div>
+        <div class="desc">
+          <div class="dh">Monthly Strategic</div>
+          <div class="dd">Termination, Hire, groesseres Investment, Customer-Escalation, Scope-Changes</div>
+        </div>
+        <div class="who"><strong>Twin synthesiert</strong> ueber 5 Layer. Lars oder Matteo entscheidet auf dem Frame.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">D</div>
+        <div class="desc">
+          <div class="dh">Quarterly Strategic</div>
+          <div class="dd">ICP-Pivot, Tagline-Change, Equity, Geography, M&amp;A, Pricing-Reset, 500k-Mandat-Migration</div>
+        </div>
+        <div class="who"><strong>Twin bereitet</strong> 5-Layer-Brief vor. Operator-Workshop mit Lars + Matteo, 60-90 Min.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">11 / 15</div>
+  </section>
+
+  <!-- 12 BORING STACK -->
+  <section class="slide" id="s12">
+    <div class="label">Der Stack darunter</div>
+    <h2 class="title">Plain Files. Offene APIs.<br><span class="accent">Kein Vendor-Lock-in.</span></h2>
+    <div class="stack-cols">
+      <div class="sc">
+        <div class="sct">Live Layer</div>
+        <div class="scn">cron + Lambda</div>
+        <div class="scd">AWS Schedules + Python Pulls. Laeuft auf der Uhr, kein Babysitting. <code>~$5/Monat</code> bei typischem Volume.</div>
+      </div>
+      <div class="sc lead">
+        <div class="sct">Truth Layer</div>
+        <div class="scn">GitHub + Notion + Drive</div>
+        <div class="scd">Jeder Fakt ist eine Datei. Diff-bar, reviewbar, audit-trailed. <strong>Offene APIs. Ihr besitzt die Wahrheit.</strong></div>
+      </div>
+      <div class="sc">
+        <div class="sct">Instrument Layer</div>
+        <div class="scn">Claude</div>
+        <div class="scd">Synthesiert die 5 Layer in einen Decision-Frame. Ersetzbar mit jedem Frontier-Model an einem Tag.</div>
+      </div>
+    </div>
+    <div class="stack-foot">Das Team <span class="accent">oeffnet nie ein Tool, das nicht schon existierte.</span> Das Twin-Pair lebt hinter den Tools, die mala markets eh schon nutzt.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">12 / 15</div>
+  </section>
+
+  <!-- 13 MALA ADAPTION + MIGRATION ZU 500K -->
+  <section class="slide" id="s13">
+    <div class="label">Uebersetzt fuer mala markets &middot; mit Migration zum 500k-Mandat</div>
+    <h2 class="title">Gleiches Twin-Pair.<br><span class="accent">Anderes Aircraft. Gleicher Hebel.</span></h2>
+    <div class="yc-grid">
+      <div class="ytag">Layer 01</div>
+      <div class="ydesc"><strong>Eure Sales- und Mandate-Reality</strong><span>Pipeline, Wons, aktive Mandate, Customer-Konzentration, Buy-Box-Stand, Sales-Velocity, ICP-Match-Klasse pro neuem Lead</span></div>
+      <div class="ytag">Layer 02</div>
+      <div class="ydesc"><strong>Euer Financial Dashboard</strong><span>P&amp;L pro Kunde, Margin pro Mandat, Headcount-Load, Retainer vs Project-Margin, Runway</span></div>
+      <div class="ytag">Layer 03</div>
+      <div class="ydesc"><strong>Eure Quarterly OKRs</strong><span>Sprint-Bindung, Mandate-Growth-Targets, Retention-Sprint, Framework-IP-Commitments pro Quartal, 500k-Pilot-Bench</span></div>
+      <div class="ytag">Layer 04</div>
+      <div class="ydesc"><strong>Mala Strategy Lock</strong><span>ICP-Brand-Profile, Channel-Mix (Amazon/Otto/Kaufland), Strategic Marketplace Leadership Framework 5D, Premium-Positioning, Migration zum 500k-Mandat</span></div>
+      <div class="ytag">Layer 05</div>
+      <div class="ydesc"><strong>Marketplace Mentor Avatars</strong><span>3-5 best-in-class Marketplace-Advisors (TBD mit Lars und Matteo). Jede strategische Mala-Decision Pattern-checked gegen sie.</span></div>
+    </div>
+    <div class="yc-foot">Aus diesem Twin wird ab 2027 euer <strong>Customer Maturity Cockpit</strong>: gleiches 5-Layer-Frame, aber als Produkt pro Mandat. <strong>2028 als Workshop-Lizenz, Pricing-Sprung zum 500k-Mandat.</strong></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">13 / 15</div>
+  </section>
+
+  <!-- 14 MOAT -->
+  <section class="slide" id="s14">
+    <div class="label">Warum das nicht 5 Min Cursor ist</div>
+    <h2 class="title">Jeder kann das bauen.<br><span class="accent">Einer hat es mit echten Kunden getestet.</span></h2>
+    <div class="moat-quote">
+      <div class="q">&ldquo;Der Moat ist nicht der Code. Jeder kann das schreiben. Der Moat sind 18 Monate Bauen, Brechen und Reparieren auf echten Kunden, die fuer die falschen Architekturen schon bezahlt haben.&rdquo;</div>
+      <div class="src">Founder Note, 2026</div>
+    </div>
+    <div class="moat-proof">
+      <div class="mp">
+        <div class="mph">Proof 01</div>
+        <div class="mpt">4 aktive Client Builds</div>
+        <div class="mpd">Recruiting, Marketing-Services, B2B SaaS und Private Holdings. Andere Domains, gleiches 5-Layer-Frame.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 02</div>
+        <div class="mpt">6 Wochen Mala-Progress</div>
+        <div class="mpd">07.04. Kickoff. 20.04. 17 Prozesse mapped. 21.04. Impact-Effort-Matrix. 07.05. Mala-Brain GitHub. Heute Twin-Build. Track-Record auf eurem Fall.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 03</div>
+        <div class="mpt">Jede Zeile in git, jede Decision geloggt</div>
+        <div class="mpd">30-Tage Outcome-Review auf jeder Twin-Decision. Das System auditet sich selbst, damit ihr es nicht muesst.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">14 / 15</div>
+  </section>
+
+  <!-- 15 PHASES + CTA -->
+  <section class="slide" id="s15">
+    <div class="label">Wie wir das bauen</div>
+    <h2 class="title">Heute Setup. 10 Wochen Twin-Pair.<br><span class="accent">2 Jahre zum 500k-Mandat-Produkt.</span></h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="pp">Phase 00<br>Heute 30 Min</div>
+        <div class="pcontent">
+          <div class="pt">Setup-Block im Call</div>
+          <div class="pd">Mala-Brain Repo live auf jedem Geraet. Notion-Mirror Read-UI fuers Team. ICP-Match-Skript auf Email-Kampagne (Matteos Pilot von heute). <strong>Lars als interner Multiplikator danach.</strong></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pp">Phase 01<br>Woche 1-4</div>
+        <div class="pcontent">
+          <div class="pt">Matteos 5 Demands + erste 3 Layer Founder Twin</div>
+          <div class="pd">Brain-Zugang fix, 6 Cron Jobs live, ICP-Match Daily, Mala-ICP Skill, Asset Foundation Sprint, erster Meta-Test. Plus L1 Sales- und Mandate-Bridges (Amazon SP-API + Otto + Kaufland) und L2 Financial Pull. <strong>Founder Twin live in Woche 4.</strong></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pp">Phase 02<br>Woche 5-10</div>
+        <div class="pcontent">
+          <div class="pt">Full Founder Twin + Team Twin Layer</div>
+          <div class="pd">L3 OKRs, L4 Strategy Lock, L5 Mentor Avatars, Voice Library Lars + Matteo, Stress Detector. Team Cowork mit Shared Brain (Friday-Sessions, GitHub-PR-Workflow). <strong>Volles Twin-Pair operational in Woche 10.</strong></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pp">2027 - 2028<br>Migration</div>
+        <div class="pcontent">
+          <div class="pt">Customer Maturity Cockpit pro Mandat, dann Workshop-Lizenz</div>
+          <div class="pd">2027 Customer Maturity Cockpit pro Mandat (50-150k Pricing-Hebel). 2028 Workshop-Lizenz mit Pricing-Sprung zum 500k-Mandat. <strong>Vivid Vision 2028 erreicht ueber dasselbe System.</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="eng-cta">
+      <div class="ch">Naechster Schritt</div>
+      <div class="ct">Setup-Block jetzt im Call. Mala-Brain live in 30 Min. Plus 60-Min RC-Cockpit-Walkthrough zur Vertiefung, real screen, real numbers. <a href="https://calendly.com/chris-gdvo/30min">calendly.com/chris-gdvo/30min</a></div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">15 / 15</div>
+  </section>
+
+</div>
+
+<div class="nav-hint">arrow keys to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
+</script>
+</body>
+</html>
