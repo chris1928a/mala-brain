@@ -1,618 +1,676 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Mala Decision Cockpit, 2026 Build</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<title>Mala Decision Cockpit, Erler Ventures fuer mala markets, 19.05.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#1E2761;
-  --navy-deep:#151B4D;
-  --ice:#CADCFC;
-  --cream:#F7F8FB;
-  --white:#FFFFFF;
-  --text:#1A1A1A;
-  --muted:#5C5C5C;
-  --accent:#F5A623;
-  --line:#E2E7F2;
-}
-.reveal{font-family:'Inter',-apple-system,Segoe UI,Helvetica,Arial,sans-serif;font-size:22px;color:var(--text);}
-.reveal .slides{text-align:left;}
-.reveal .slides section{height:100%;padding:0;}
-.reveal h1,.reveal h2,.reveal h3,.reveal h4{font-family:'Playfair Display',Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:-0.01em;margin:0;}
-.reveal h1{font-size:3.5em;line-height:1.05;font-weight:800;}
-.reveal h2{font-size:2.4em;line-height:1.1;font-weight:700;}
-.reveal h3{font-size:1.6em;line-height:1.2;font-weight:700;}
-.reveal h4{font-size:1.2em;line-height:1.3;font-weight:700;}
-.reveal p{margin:0 0 0.6em 0;line-height:1.4;}
-.reveal ul{list-style:none;padding:0;margin:0;}
-.reveal ul li{position:relative;padding-left:1.1em;margin-bottom:0.5em;line-height:1.4;}
-.reveal ul li::before{content:"";position:absolute;left:0;top:0.55em;width:0.5em;height:0.5em;background:var(--accent);border-radius:50%;}
+  :root {
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #7c3aed;
+    --accent-deep: #6d28d9;
+    --accent-soft: #f5f3ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --red: #dc2626;
+    --green: #16a34a;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+  }
 
-/* Slide layouts */
-.slide-pad{padding:60px 70px 50px 70px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;}
-.slide-pad-dark{background:var(--navy);color:var(--white);}
-.slide-pad-dark h1,.slide-pad-dark h2,.slide-pad-dark h3,.slide-pad-dark h4{color:var(--white);}
-.slide-pad-cream{background:var(--cream);}
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide {
+    width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+    display: none; padding: 11vh 11vw;
+    flex-direction: column; justify-content: center;
+    background: var(--bg);
+  }
+  .slide.active { display: flex; }
 
-.kicker{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.15em;font-size:0.7em;color:var(--muted);font-weight:600;margin-bottom:0.7em;}
-.slide-pad-dark .kicker{color:var(--ice);}
+  .label {
+    position: absolute; top: 6vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
 
-.subtitle{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:1.1em;margin-top:0.3em;margin-bottom:1.5em;font-weight:400;}
-.slide-pad-dark .subtitle{color:var(--ice);}
+  .page-num {
+    position: absolute; bottom: 5vh; right: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  }
+  .brand {
+    position: absolute; bottom: 5vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
 
-.section-num{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Playfair Display',serif;font-weight:700;font-size:20px;margin-right:18px;flex-shrink:0;}
-.section-num.accent{background:var(--accent);color:var(--navy);}
-.heading-row{display:flex;align-items:center;margin-bottom:0.3em;}
+  /* COVER */
+  .cover-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 2.5rem;
+  }
+  h1.cover-title {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.02;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem; max-width: 22ch;
+  }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 60ch; line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem; font-weight: 400; color: var(--text);
+    letter-spacing: 0.01em; line-height: 1.7;
+  }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
 
-.cards-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:0.5em;flex:1;}
-.cards-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:0.5em;flex:1;}
-.cards-6{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;margin-top:0.5em;flex:1;}
-.card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px 26px;position:relative;display:flex;flex-direction:column;}
-.card.accent-top{border-top:5px solid var(--accent);}
-.card.navy-top{border-top:5px solid var(--navy);}
-.card.navy-side{border-left:5px solid var(--navy);}
-.card.accent-side{border-left:5px solid var(--accent);}
-.card-h{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:1.15em;margin-bottom:0.4em;line-height:1.2;}
-.card-tag{font-family:'Inter',sans-serif;font-style:italic;color:var(--accent);font-size:0.78em;margin-bottom:0.6em;font-weight:500;}
-.card-body{font-size:0.86em;color:var(--text);line-height:1.4;}
-.card-mini{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:18px 22px;display:flex;flex-direction:column;}
-.card-mini .num{position:absolute;top:14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--white);font-weight:700;font-size:14px;display:inline-flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;}
+  h2.title {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05;
+    letter-spacing: -0.035em; color: var(--text);
+    margin-bottom: 3.5rem; max-width: 24ch;
+  }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
 
-.problem-row{display:flex;align-items:flex-start;margin-bottom:14px;}
-.problem-row .section-num{width:38px;height:38px;font-size:16px;}
-.problem-text{flex:1;}
-.problem-text .h{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:1.15em;line-height:1.2;}
-.problem-text .b{color:var(--text);font-size:0.85em;line-height:1.4;margin-top:2px;}
+  /* PAIN CELLS */
+  .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+  .pain { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--bg); }
+  .pain .pn { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); }
+  .pain .pt { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; line-height: 1.3; }
+  .pain .pd { font-size: 0.82rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .pain-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 78ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .pain-foot .accent { color: var(--accent); font-weight: 700; }
 
-.cron-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:0.85em;}
-.cron-table td{padding:10px 14px;border:1px solid var(--line);}
-.cron-table .freq{background:var(--ice);color:var(--navy);font-weight:700;font-family:'Inter',sans-serif;width:120px;font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;}
-.cron-table .job{background:var(--white);color:var(--text);}
+  /* CASE */
+  .case-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 1.5rem; align-items: start; }
+  .case-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .case-stat .n { font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .case-stat .lbl { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; margin-top: 0.3rem; }
+  .case-stat .sub { font-size: 0.82rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+  .case-body { font-size: 1rem; color: var(--text); line-height: 1.65; }
+  .case-body p { margin-bottom: 0.85rem; }
+  .case-body strong { color: var(--accent); font-weight: 600; }
+  .case-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); font-style: italic; }
+  .case-foot .accent { color: var(--accent); font-style: normal; font-weight: 600; }
 
-.icp-box{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin-bottom:20px;}
-.icp-box h4{margin-bottom:0.4em;}
-.icp-box .body{font-size:0.9em;line-height:1.5;}
+  /* LAYER STACK */
+  .layer-stack { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .l-row { display: grid; grid-template-columns: 0.35rem 6rem 1fr; gap: 1.5rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+  .l-row:first-child { border-top: 1px solid var(--border); }
+  .l-bar { background: var(--accent); height: 2.4rem; border-radius: 2px; }
+  .l-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .l-body { display: flex; flex-direction: column; gap: 0.15rem; }
+  .l-name { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.005em; }
+  .l-desc { font-weight: 400; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+  .l-desc strong { color: var(--text); font-weight: 600; }
+  .layer-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .layer-foot strong { color: var(--accent); }
 
-.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.flow-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:6px;padding:18px 20px;}
-.flow-card .step{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1em;font-weight:700;margin-bottom:4px;}
-.flow-card .h{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:1.05em;margin-bottom:6px;}
-.flow-card .b{font-size:0.78em;color:var(--text);line-height:1.4;}
+  /* PULL TABLE */
+  .pull-table { width: 100%; border-collapse: collapse; }
+  .pull-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .pull-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.82rem; vertical-align: top; line-height: 1.4; }
+  .pull-table .file { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .pull-table .what { color: var(--text); font-weight: 500; }
+  .pull-table .nums { color: var(--muted); font-size: 0.78rem; }
+  .pull-foot { margin-top: 1rem; padding: 0.85rem 1.1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.85rem; line-height: 1.5; color: var(--text); border-radius: 0 4px 4px 0; }
+  .pull-foot strong { color: var(--accent); font-weight: 700; }
 
-.split-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;}
-.split-left h3{margin-bottom:0.5em;}
-.proposal-box{background:var(--navy);color:var(--white);border-radius:6px;padding:26px 30px;height:100%;box-sizing:border-box;}
-.proposal-box h3{color:var(--white);margin-bottom:0.6em;}
-.proposal-box ul li{color:var(--ice);}
-.proposal-box ul li::before{background:var(--accent);}
+  /* DECISIONS TABLE */
+  .dec-table { width: 100%; border-collapse: collapse; }
+  .dec-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .dec-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.85rem; vertical-align: top; line-height: 1.4; }
+  .dec-table .dec { font-weight: 700; color: var(--text); }
+  .dec-table .dec small { display: block; color: var(--muted); font-weight: 400; font-size: 0.72rem; margin-top: 0.2rem; }
+  .dec-table .cat { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .dec-table .rec { color: var(--text); font-size: 0.82rem; }
+  .dec-table .rec strong { color: var(--accent); font-weight: 600; }
 
-.big-statement{font-family:'Playfair Display',serif;font-size:3.2em;line-height:1.05;font-weight:800;color:var(--white);margin-bottom:0.6em;}
-.proof-box{background:var(--navy-deep);border:2px solid var(--accent);border-radius:6px;padding:32px 36px;margin-top:30px;}
-.proof-box .label{color:var(--accent);font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.15em;font-size:0.7em;font-weight:600;margin-bottom:0.7em;}
-.proof-box .title{font-family:'Playfair Display',serif;color:var(--white);font-size:2em;font-weight:700;margin-bottom:0.6em;}
-.proof-box .body{color:var(--ice);font-size:1em;line-height:1.5;}
+  /* TIERS */
+  .tiers { display: flex; flex-direction: column; }
+  .tier { display: grid; grid-template-columns: 5rem 1fr 1fr; gap: 2rem; align-items: baseline; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+  .tier:first-child { border-top: 1px solid var(--border); }
+  .tier .tg { font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .tier .desc { display: flex; flex-direction: column; gap: 0.25rem; }
+  .tier .dh { font-weight: 600; font-size: 1rem; color: var(--text); }
+  .tier .dd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .tier .who { font-size: 0.85rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+  .tier .who strong { color: var(--accent); font-weight: 700; }
 
-.layer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:0.5em;}
-.layer-card{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:6px;padding:18px 22px;}
-.layer-card.accent{border-left-color:var(--accent);}
-.layer-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
-.layer-head .name{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:1.05em;}
-.layer-head .src{font-style:italic;color:var(--muted);font-size:0.78em;}
-.layer-card .body{font-size:0.82em;color:var(--text);line-height:1.4;}
+  /* STACK COLS */
+  .stack-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+  .sc { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; }
+  .sc.lead { border-color: var(--accent); border-width: 2px; background: var(--accent-soft); }
+  .sc .sct { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .sc.lead .sct { color: var(--accent); }
+  .sc .scn { font-weight: 700; font-size: 1.3rem; color: var(--text); letter-spacing: -0.015em; margin-top: 0.3rem; }
+  .sc.lead .scn { color: var(--accent); }
+  .sc .scd { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+  .sc .scd code { font-family: var(--mono); font-size: 0.78rem; background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--accent); }
+  .stack-foot { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .stack-foot .accent { color: var(--accent); font-weight: 700; }
 
-.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;}
-.persona-card{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:6px;padding:28px 32px;display:flex;flex-direction:column;}
-.persona-card h2{margin-bottom:0.2em;}
-.persona-card .lens{color:var(--accent);font-family:'Inter',sans-serif;font-style:italic;font-weight:500;margin-bottom:0.8em;}
-.persona-card .desc{font-size:0.92em;line-height:1.5;flex:1;}
-.persona-card .trigger{margin-top:14px;color:var(--muted);font-family:'Inter',sans-serif;font-size:0.82em;font-style:italic;padding-top:14px;border-top:1px solid var(--line);}
-.data-banner{background:var(--navy);color:var(--white);border-radius:6px;padding:18px 26px;margin-top:24px;}
-.data-banner .title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1em;margin-bottom:4px;}
-.data-banner .body{color:var(--ice);font-size:0.82em;line-height:1.4;}
+  /* MALA GRID (VOW-style 2-col tagged) */
+  .vow-grid { display: grid; grid-template-columns: 6rem 1fr; gap: 1.5rem; row-gap: 0.5rem; margin-bottom: 1.5rem; }
+  .vow-grid .vtag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding-top: 1rem; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+  .vow-grid .vdesc { padding-top: 1rem; border-top: 1px solid var(--border); }
+  .vow-grid .vdesc strong { color: var(--text); font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.2rem; }
+  .vow-grid .vdesc span { color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; }
+  .vow-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); font-style: italic; }
+  .vow-foot strong { color: var(--accent); font-style: normal; font-weight: 700; }
 
-.engine-row{display:flex;align-items:flex-start;margin-bottom:14px;padding:14px 16px;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:4px;}
-.engine-row .section-num{width:36px;height:36px;font-size:14px;background:var(--accent);color:var(--white);}
-.engine-row .h{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:1.05em;min-width:200px;}
-.engine-row .b{flex:1;font-size:0.85em;line-height:1.4;}
+  /* SPLIT HERO (2 col) */
+  .g2-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 1.5rem; }
+  .g2-col { display: flex; flex-direction: column; gap: 1rem; }
+  .g2-col .gtag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .g2-col .gh { font-weight: 700; font-size: 1.5rem; color: var(--text); letter-spacing: -0.02em; line-height: 1.2; }
+  .g2-col p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+  .g2-col p strong { color: var(--text); font-weight: 600; }
+  .g2-foot { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .g2-foot .accent { color: var(--accent); font-weight: 700; }
 
-.roadmap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;flex:1;}
-.q-card{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;}
-.q-head{background:var(--navy);color:var(--white);padding:20px 24px;}
-.q-head .q{font-family:'Playfair Display',serif;color:var(--accent);font-size:2.2em;font-weight:800;line-height:1;margin-bottom:6px;}
-.q-head .tag{font-family:'Playfair Display',serif;color:var(--white);font-weight:700;font-size:1.1em;}
-.q-head .when{color:var(--ice);font-size:0.78em;font-style:italic;margin-top:2px;}
-.q-body{padding:20px 24px;flex:1;}
-.q-body ul li{font-size:0.84em;line-height:1.35;margin-bottom:0.45em;}
+  /* MOAT */
+  .moat-quote { padding: 2rem 2.2rem; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; margin-bottom: 2.5rem; }
+  .moat-quote .q { font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.8rem); color: var(--text); line-height: 1.4; letter-spacing: -0.015em; margin-bottom: 1rem; }
+  .moat-quote .src { font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+  .moat-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .mp { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 1rem; border-top: 2px solid var(--accent); }
+  .mp .mph { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .mp .mpt { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .mp .mpd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
-.phase-row{display:flex;align-items:stretch;margin-bottom:14px;border-radius:6px;overflow:hidden;}
-.phase-year{background:var(--navy);color:var(--accent);font-family:'Playfair Display',serif;font-weight:700;font-size:1.4em;padding:18px 22px;display:flex;align-items:center;justify-content:center;width:170px;flex-shrink:0;text-align:center;}
-.phase-content{background:var(--white);border:1px solid var(--line);border-left:none;padding:18px 26px;flex:1;}
-.phase-content .h{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:1.15em;margin-bottom:4px;}
-.phase-content .b{font-size:0.85em;line-height:1.45;}
+  /* PHASES */
+  .phases { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+  .phase { display: grid; grid-template-columns: 8rem 1fr; gap: 2.5rem; align-items: baseline; padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+  .phase:first-child { border-top: 1px solid var(--border); }
+  .phase .pp { font-weight: 700; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+  .phase .pcontent { display: flex; flex-direction: column; gap: 0.3rem; }
+  .phase .pt { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .phase .pd { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .eng-cta { margin-top: 1.25rem; padding: 1.1rem 1.4rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+  .eng-cta .ch { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .eng-cta .ct { font-weight: 600; font-size: 1.05rem; color: var(--text); line-height: 1.5; }
+  .eng-cta .ct a { color: var(--accent); text-decoration: none; font-weight: 700; }
+  .eng-cta .ct a:hover { text-decoration: underline; }
 
-.invest-table{width:100%;border-collapse:collapse;font-size:0.85em;}
-.invest-table th{background:var(--navy);color:var(--white);font-family:'Playfair Display',serif;text-align:left;padding:14px 16px;font-weight:700;}
-.invest-table td{padding:14px 16px;border-bottom:1px solid var(--line);}
-.invest-table tr.zebra td{background:#F0F2F8;}
-.invest-table .phase{font-weight:700;color:var(--navy);width:140px;}
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
-.honest-block{margin-bottom:30px;}
-.honest-block p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1em;color:var(--ice);line-height:1.5;}
-.decisions-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.decision-row{display:flex;align-items:flex-start;}
-.decision-row .section-num{background:var(--accent);color:var(--navy);width:38px;height:38px;font-size:16px;}
-.decision-row .h{color:var(--white);font-family:'Playfair Display',serif;font-weight:700;font-size:1.05em;}
-.decision-row .b{color:var(--ice);font-size:0.82em;line-height:1.4;}
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
 
-.bottom-accent{height:4px;width:80px;background:var(--accent);margin-top:20px;}
-
-.footer-meta{position:absolute;bottom:18px;left:70px;right:70px;display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:0.6em;color:var(--muted);letter-spacing:0.05em;}
-.slide-pad-dark .footer-meta{color:var(--ice);}
-
-.note{font-size:0.7em;color:var(--muted);font-style:italic;margin-top:0.6em;}
-.slide-pad-dark .note{color:var(--ice);}
-.title-accent{position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--accent);}
-
-/* Reveal customisation */
-.reveal .progress{color:var(--accent);}
-.reveal .controls{color:var(--accent);}
+  @media (max-width: 900px) {
+    .slide { padding: 7vh 7vw; }
+    .label { top: 4vh; left: 7vw; }
+    .page-num, .brand { bottom: 3vh; }
+    .page-num { right: 7vw; }
+    .brand { left: 7vw; }
+    .pains, .stack-cols, .moat-proof { grid-template-columns: 1fr; }
+    .case-hero, .g2-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+    .l-row { grid-template-columns: 0.3rem 1fr; }
+    .l-tag, .l-body { grid-column: 2; }
+    .tier { grid-template-columns: 3rem 1fr; }
+    .tier .who { grid-column: 2; }
+    .vow-grid { grid-template-columns: 1fr; }
+    .vow-grid .vtag { border-top: 1px solid var(--border); padding-top: 1rem; }
+    .vow-grid .vdesc { border-top: none; padding-top: 0; }
+    .phase { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-<div class="reveal">
-<div class="slides">
+<div class="deck">
 
-<!-- 1. Title -->
-<section data-background-color="#1E2761">
-<div class="slide-pad slide-pad-dark" style="justify-content:center;position:relative;">
-<div class="title-accent"></div>
-<div class="kicker" style="margin-bottom:1em;">Mala Marketing &times; Erler Ventures</div>
-<h1>Mala Decision Cockpit</h1>
-<div class="subtitle" style="font-size:1.4em;margin-top:0.4em;">2026 Build. 2028 Hebel.</div>
-<p style="color:var(--ice);font-size:0.95em;margin-top:1em;max-width:80%;">Vom Operations-Stand zum CEO-Brain. Pro Founder eine Decision-Lens, pro Mandat ein Maturity-Score.</p>
-<div class="footer-meta" style="bottom:50px;">
-<span>Chris Erler &nbsp;|&nbsp; 19.05.2026 &nbsp;|&nbsp; Erler Ventures</span>
-<span>01 / 18</span>
-</div>
-</div>
-</section>
+  <!-- 01 COVER -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">Erler Ventures &times; mala markets &middot; Lars &amp; Matteo &middot; 19.05.2026</div>
+    <h1 class="cover-title">Das Mala<br><span class="accent">Decision Cockpit.</span></h1>
+    <p class="cover-sub">Ein arbeitendes CEO-Cockpit fuer Co-Founder. Pro Founder eine Decision-Lens. Pro Mandat ein Maturity-Score. Migrationspfad zum 500k-Mandat.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">Prep fuer den Call am 19.05.2026</span></p>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">01 / 12</div>
+  </section>
 
-<!-- 2. Wo wir stehen -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Status</div>
-<h2>Wo wir stehen</h2>
-<div class="subtitle">Strategie steht. Operations driftet. 5 akute Themen plus ein grosser Hebel.</div>
-<div class="cards-3" style="margin-top:30px;">
-<div class="card navy-top">
-<div class="card-h">Strategie</div>
-<div class="card-body">Vivid Vision 2028 ist da. 10 bis 15 Mandate, 500k EUR pro Mandat, 5 bis 7,5M Volumen. Strategic Marketplace Leadership Framework mit 5 Dimensionen und 25 Statements designt.</div>
-</div>
-<div class="card navy-top">
-<div class="card-h">Operations</div>
-<div class="card-body">Q1 Rocks (Framework, Assessment, Workshop, Pilot, Manifest) waren Deadline W6 bis W12. Heute W20. Alle ueberfaellig. Kein zentrales Operating System.</div>
-</div>
-<div class="card navy-top">
-<div class="card-h">Heute</div>
-<div class="card-body">5 akute Themen aus Matteos Liste fuer den Call. Plus ein groesserer Hebel im Hintergrund: das eigentliche Operating System, das auch das Produkt fuer 2028 wird.</div>
-</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>02 / 18</span></div>
-</div>
-</section>
+  <!-- 02 PAIN -->
+  <section class="slide" id="s2">
+    <div class="label">Worum es heute geht</div>
+    <h2 class="title">Ihr habt die Strategie 2028.<br><span class="accent">Aber kein Operating System fuer 2026.</span></h2>
+    <div class="pains">
+      <div class="pain">
+        <div class="pn">Pain 01</div>
+        <div class="pt">Q1 Rocks sind ueberfaellig</div>
+        <div class="pd">Framework, Assessment, Workshop, Pilot, Manifest hatten Deadline W6 bis W12. Heute W20. Alle offen. Kein zentrales System zwingt die Execution.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Pain 02</div>
+        <div class="pt">Wahrheit liegt in 6 Tools</div>
+        <div class="pd">CRM, Performance-Tools, Sheet, Vision-Doc, Slack, im Kopf von Lars und Matteo. Keine spricht mit der anderen. Decisions auf Gefuehl statt Frame.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Pain 03</div>
+        <div class="pt">Kein Migrationspfad zum 500k-Mandat</div>
+        <div class="pd">Vivid Vision sagt 10-15 Mandate Ø 500k. Heute Performance-Pricing. Pricing-Sprung 10-20x ohne System dazwischen.</div>
+      </div>
+    </div>
+    <div class="pain-foot">Der Engpass sind nicht die Daten. <span class="accent">Es ist der einheitliche Decision-Frame zum Denken.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">02 / 12</div>
+  </section>
 
-<!-- 3. 5 Probleme heute -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Agenda</div>
-<h2>5 Probleme heute</h2>
-<div class="subtitle">Aus Matteos Agenda fuer den Call. Loesung in 3 Slides.</div>
-<div style="margin-top:24px;">
-<div class="problem-row"><div class="section-num">1</div><div class="problem-text"><div class="h">Team-Zugang Mala-Brain</div><div class="b">Jeder im Team unterschiedlicher Stand. Matteo findet die Einstellungen nicht.</div></div></div>
-<div class="problem-row"><div class="section-num">2</div><div class="problem-text"><div class="h">Cron Jobs</div><div class="b">Welche Anwendungsfaelle. Was laeuft taeglich automatisch, was woechentlich.</div></div></div>
-<div class="problem-row"><div class="section-num">3</div><div class="problem-text"><div class="h">ICP fuer mala markets</div><div class="b">Definition fehlt. Filterung auf Pipeline manuell, nicht skalierbar.</div></div></div>
-<div class="problem-row"><div class="section-num">4</div><div class="problem-text"><div class="h">AI prueft ICP</div><div class="b">Claude soll bei jedem Lead automatisch gegen ICP checken. Kein Training, ein Skill.</div></div></div>
-<div class="problem-row"><div class="section-num">5</div><div class="problem-text"><div class="h">Asset Foundation und Meta Test</div><div class="b">Stand offen. Was muss fertig sein bevor der erste Paid-Test live geht.</div></div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>03 / 18</span></div>
-</div>
-</section>
+  <!-- 03 RC CASE -->
+  <section class="slide" id="s3">
+    <div class="label">Gebaut, nicht gepitcht</div>
+    <h2 class="title">Recruitment Circle. Ein CEO.<br><span class="accent">Ein Decision Cockpit.</span></h2>
+    <div class="case-hero">
+      <div>
+        <div class="case-stat">
+          <div class="n">30</div>
+          <div class="lbl">people</div>
+          <div class="sub">DACH B2B Tech Recruiting Agentur, founder-led, hyper-growth.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">3M&nbsp;EUR</div>
+          <div class="lbl">ARR</div>
+          <div class="sub">486 Placements lifetime. 181 in den letzten 24 Monaten. Aktive Pipeline 1,14M EUR.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">85<span style="font-size: 0.5em;">%</span></div>
+          <div class="lbl">decision coverage</div>
+          <div class="sub">Stand 14.05.2026. Live seit demselben Tag.</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <p>Raphael ist Founder-CEO. <strong>Der Engpass war nicht Daten. Es war, dass kein Mensch Sales, Delivery, Finance, OKRs, ICP und 4 Mentor-Patterns in einem Frame halten kann, in Echtzeit, waehrend eine Slack-Nachricht reinkommt.</strong></p>
+        <p>Also haben wir einen gebaut. Das Cockpit zieht jeden Layer der Firmen-Wahrheit in einen Decision-Frame. Live. Es entscheidet nicht. Es faengt ab, was der CEO uebersehen haette.</p>
+        <p>Diese Woche hat es <strong>5 frame-checked strategische Decisions</strong> geliefert. Termination, Customer-Konzentration, Pricing, Strategic Direction. Jede mit 30-Tage Outcome-Review geloggt.</p>
+      </div>
+    </div>
+    <div class="case-foot">Kein Notion-Template. Kein Chatbot. <span class="accent">Ein arbeitendes Instrument.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">03 / 12</div>
+  </section>
 
-<!-- 4. Brain + Cron -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="heading-row"><div class="section-num">1+2</div><h2 style="margin:0;">Brain-Zugang und Cron Jobs</h2></div>
-<div class="split-2" style="margin-top:30px;">
-<div>
-<h3>Mala-Brain</h3>
-<ul style="margin-top:14px;">
-<li>GitHub mala-brain als Master Truth (existiert bereits)</li>
-<li>Notion-Mirror als Read-UI fuers Team</li>
-<li>30 Min Setup-Block morgen im Call mit Lars</li>
-<li>Loom-Video vom Setup als Onboarding-Asset</li>
-<li>Lars als interner Multiplikator danach</li>
-</ul>
-</div>
-<div>
-<h3>6 Cron Jobs</h3>
-<table class="cron-table" style="margin-top:14px;">
-<tr><td class="freq">Daily</td><td class="job">PPC Performance pro Mandat</td></tr>
-<tr><td class="freq">Daily</td><td class="job">Buy-Box Monitor pro Listing</td></tr>
-<tr><td class="freq">Daily</td><td class="job">ICP-Match auf neue Leads</td></tr>
-<tr><td class="freq">Weekly</td><td class="job">Churn-Score pro Kunde</td></tr>
-<tr><td class="freq">Weekly</td><td class="job">Maturity-Score pro Mandat</td></tr>
-<tr><td class="freq">Monthly</td><td class="job">500k-Tauglichkeit pro Account</td></tr>
-</table>
-</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>04 / 18</span></div>
-</div>
-</section>
+  <!-- 04 5-LAYER -->
+  <section class="slide" id="s4">
+    <div class="label">Wie es denkt</div>
+    <h2 class="title">5 Layer.<br><span class="accent">Jede strategische Decision laeuft durch sie, in dieser Reihenfolge.</span></h2>
+    <div class="layer-stack">
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 01</div>
+        <div class="l-body">
+          <div class="l-name">Sales + Delivery CRM Reality</div>
+          <div class="l-desc">Wons, Losses, Pipeline, Customer-Konzentration, aktive Mandate. <strong>Harte Fakten vor Meinungen.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 02</div>
+        <div class="l-body">
+          <div class="l-name">Financial Dashboard</div>
+          <div class="l-desc">Cashflow, Headcount, Liqui-Trend, KPIs. <strong>Die Decision muss die P&amp;L ueberleben.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 03</div>
+        <div class="l-body">
+          <div class="l-name">Quarterly OKRs</div>
+          <div class="l-desc">Sprint-Bindung. <strong>Eine Decision die den Sprint bricht braucht einen lauteren Grund.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 04</div>
+        <div class="l-body">
+          <div class="l-name">Strategy Lock</div>
+          <div class="l-desc">ICP, Positioning, Pricing, Service-Tiers, Tagline. <strong>Die gefrorenen Entscheidungen die das Unternehmen schon bezahlt hat.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 05</div>
+        <div class="l-body">
+          <div class="l-name">Mentor Avatars</div>
+          <div class="l-desc">Pattern-Match gegen 3-5 der besten Operators in eurem Space. <strong>Was wuerde der klueger Peer dazu sagen?</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="layer-foot">Eine Decision die <strong>3 oder mehr Layer widerspricht</strong> triggert einen Stop-and-Think-Alert. Das Cockpit weigert sich, sie durchzuschieben.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">04 / 12</div>
+  </section>
 
-<!-- 5. ICP Match Engine -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="heading-row"><div class="section-num">3+4</div><h2 style="margin:0;">ICP Match Engine</h2></div>
-<div class="subtitle">ICP-Definition aus Vivid Vision plus Daily-Skript plus Skill, der immer prueft.</div>
-<div class="icp-box">
-<h4>ICP-Definition (aus Vivid Vision 2028 abgeleitet)</h4>
-<div class="body">DACH, ambitionierte Marken, Marketplace-relevant (Amazon plus Otto oder Kaufland), C-Level reachable, Umsatz 5 bis 50M EUR, Wachstumsphase, Budget mindestens 50k EUR pro Jahr fuer Marketplace.</div>
-</div>
-<div class="flow-grid">
-<div class="flow-card"><div class="step">1</div><div class="h">Pipeline-Pull</div><div class="b">Outbound + Inbound + CRM jeden Morgen</div></div>
-<div class="flow-card"><div class="step">2</div><div class="h">ICP-Skript</div><div class="b">Python-Filter, Output pro Lead</div></div>
-<div class="flow-card"><div class="step">3</div><div class="h">Klassifikation</div><div class="b">P1, P2, P3, OUT</div></div>
-<div class="flow-card"><div class="step">4</div><div class="h">Skill-Trigger</div><div class="b">Bei Lead/Account-Frage prueft Claude automatisch</div></div>
-</div>
-<div class="note">Vorbild: tools/icp_match_close.py aus RC, 10.000+ Leads gegen ICP v2 in P1/P2/P3/OUT klassifiziert.</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>05 / 18</span></div>
-</div>
-</section>
+  <!-- 05 LIVE PULLS -->
+  <section class="slide" id="s5">
+    <div class="label">Was unter der Haube laeuft</div>
+    <h2 class="title" style="margin-bottom: 2rem;">Alle Firmendaten.<br><span class="accent">Live gepullt. Immer aktuell.</span></h2>
+    <table class="pull-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Pull</th>
+          <th style="width: 38%;">Was es tut</th>
+          <th style="width: 40%;">Live Numbers (RC, heute)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="file">close_bridge.py</td>
+          <td class="what">Sales-CRM: Opportunities, Wons, Lost, Pipeline, Leads, Lost-Reasons</td>
+          <td class="nums">411 Opps, 80 Wons, 530k EUR Active Pipeline, 20% Won-Rate</td>
+        </tr>
+        <tr>
+          <td class="file">crm_bridge.py</td>
+          <td class="what">Delivery-CRM: aktive Mandate, Companies, Candidates, Recruiter-Ownership</td>
+          <td class="nums">15 aktive Mandate, 391 Companies, 1.000+ Candidates</td>
+        </tr>
+        <tr>
+          <td class="file">financial_pull.py</td>
+          <td class="what">Liqui, Headcount, Sales- und Recruiting-KPIs aus Live-Sheet</td>
+          <td class="nums">152k Avg Monatsumsatz Q1, 130-210k Personalkosten, Drawdown getrackt</td>
+        </tr>
+        <tr>
+          <td class="file">pipeline_daily.py</td>
+          <td class="what">Daily Snapshot + Diff vs gestern + Risk-Flags (Stagnation, Overdue, Drops)</td>
+          <td class="nums">Mo-Fr 18:30 CET. Alerts bei Stage-Stagnation &gt;7 Tage, Pipeline-Drop &gt;10%</td>
+        </tr>
+        <tr>
+          <td class="file">stress_detector.py</td>
+          <td class="what">Pre-Decision Stress-Score. Refused Push bei rotem Score.</td>
+          <td class="nums">Score 0-100. Rot = Pause-Template statt Decision-Push</td>
+        </tr>
+        <tr>
+          <td class="file">renewal_tracker.py</td>
+          <td class="what">Customer Renewal-Cycle aus Won-History + Custom-Field-Override. Heatmap.</td>
+          <td class="nums">UPCOMING / RENEWAL_WINDOW / OVERDUE pro Customer, 60-Tage Rolling-View</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pull-foot"><strong>Alles Python. Alles in git.</strong> ~200 Zeilen pro Pull. Kein Vendor. Kein n8n. Kein make.com. Cron + Lambda fuer die Schedules.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">05 / 12</div>
+  </section>
 
-<!-- 6. Asset Foundation + Meta Test -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="heading-row"><div class="section-num">5</div><h2 style="margin:0;">Asset Foundation und erster Meta Test</h2></div>
-<div class="subtitle">Stand morgen abfragen. Vorschlag fuer ersten Test als Konkretisierung.</div>
-<div class="split-2" style="margin-top:20px;">
-<div>
-<h3>Stand abfragen</h3>
-<ul style="margin-top:14px;">
-<li>welche Assets sind fertig: LP, Hook Page, Ad-Briefs, Outbound-Templates</li>
-<li>Budget fuer ersten Test</li>
-<li>Primaerer KPI: CPL, CTR, Meeting-Booked, Demo-Show</li>
-<li>Welches ICP-Sub-Segment fuer ersten Test</li>
-<li>Welche Audience-Daten als Basis vorhanden</li>
-</ul>
-</div>
-<div class="proposal-box">
-<h3>Vorschlag erster Test</h3>
-<ul>
-<li>Sub-Segment: Marken 5-50M, Amazon-aktiv, Otto/Kaufland Wachstum gewollt</li>
-<li>Hook: &laquo;Marktplaetze gehoeren auf C-Level&raquo;</li>
-<li>1 LP, 3 Ad-Variationen</li>
-<li>2 Wochen Laufzeit, 3-5k EUR Budget</li>
-<li>ICP-Daten als Custom Audience auf Meta</li>
-<li>KPI lock: Cost-per-Booked-Meeting</li>
-</ul>
-</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>06 / 18</span></div>
-</div>
-</section>
+  <!-- 06 DECISIONS ON TAPE -->
+  <section class="slide" id="s6">
+    <div class="label">5 Decisions aus einer Woche, alle geloggt</div>
+    <h2 class="title" style="margin-bottom: 2rem;">Diese Woche hat das Cockpit<br><span class="accent">5 frame-checked CEO-Decisions geliefert.</span></h2>
+    <table class="dec-table">
+      <thead>
+        <tr>
+          <th style="width: 30%;">Decision</th>
+          <th style="width: 12%;">Tier</th>
+          <th style="width: 58%;">Was das Cockpit empfohlen hat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dec">Joshua: PIP oder Termination<small>SDR, 5.753 Calls, 0 Pitches</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">30-Tage PIP mit harten Aktivitaets-Targets. <strong>Layer 1 fand die Conversion-Luecke. Layer 2 sagte: jetzt feuern kostet Ramp-Time die der Cashflow nicht traegt.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Adesso 21,5% Customer-Konzentration<small>21,5% von 24M EUR = 688k EUR</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">Recruit-Off-Klausel-Audit, jetzt. <strong>Layer 1 flaggte die Konzentration. Layer 4 sagte: unsere Positioning haengt an diversifizierter Hyper-Growth, nicht an Adesso-Abhaengigkeit.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Track A/B/C Strategic Direction<small>Cashflow-Engine vs Premium-Pipeline</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">Option C, Dual-Track. <strong>Layer 2 sagte: pure-premium hungert Q3-Cash. Layer 5 sagte: Bluebirds Dual-Channel laeuft 7-Tage-TTF. Pattern adoptieren.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Pricing-Tier Lock<small>Retainer vs Engage vs Trial</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">3-Tier-Modell: Retainer 30k, Engage Hybrid, Trial 1.5k. <strong>Layer 4 gefroren. Keine Per-Deal-Verhandlungs-Drift mehr.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Mai-Test Hook-Variante<small>4-Wochen LinkedIn-Ad-Test</small></td>
+          <td class="cat">B - Weekly</td>
+          <td class="rec">Konzept A als Lead, Konzept C als Backup. <strong>Layer 5 Pattern-Match gegen Adriano Hermann Build-in-Public-Hooks.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">06 / 12</div>
+  </section>
 
-<!-- 7. Transition Dark -->
-<section data-background-color="#1E2761">
-<div class="slide-pad slide-pad-dark" style="position:relative;">
-<div class="title-accent"></div>
-<div class="kicker" style="margin-top:30px;">Pivot</div>
-<p style="font-family:'Playfair Display',serif;font-style:italic;color:var(--ice);font-size:1.5em;margin-bottom:0.4em;">Das war das Fundament.</p>
-<div class="big-statement">Hier der eigentliche Hebel.</div>
-<div class="proof-box">
-<div class="label">Bei Recruitment Circle gebaut</div>
-<div class="title">RC Decision Cockpit</div>
-<div class="body">5-Layer Decision Synthesis. Live Data Pulls aus 6 Quellen. Use-Cases: ICP, Pricing, Mandate, Sales, Hiring, Content, Investitionen. Ehrlich positioniert als Decision-Support, kein autonomer Twin. Avatar-Coverage 90% nach 6 Monaten Build.</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>07 / 18</span></div>
-</div>
-</section>
+  <!-- 07 AUTONOMY TIERS -->
+  <section class="slide" id="s7">
+    <div class="label">Lars und Matteo bleiben am Steuer</div>
+    <h2 class="title">Das Cockpit fliegt nicht die Maschine.<br><span class="accent">Es faengt ab was ihr uebersehen haettet.</span></h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tg">A</div>
+        <div class="desc">
+          <div class="dh">Daily Tactical</div>
+          <div class="dd">LinkedIn-Post-Thema, Tool-Trial &lt;50 EUR, Outbound-Cadence-Tweak, Content-Prompt</div>
+        </div>
+        <div class="who"><strong>Cockpit entscheidet.</strong> Notification, keine Frage.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">B</div>
+        <div class="desc">
+          <div class="dh">Weekly Tactical</div>
+          <div class="dd">Sales-Outreach-Liste, Pricing-Variante fuer einzelnen Deal, Ad-Hook-Variante, Weekly Prios</div>
+        </div>
+        <div class="who"><strong>Cockpit empfiehlt.</strong> Quick-Approve in Slack oder Skip.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">C</div>
+        <div class="desc">
+          <div class="dh">Monthly Strategic</div>
+          <div class="dd">Termination, Hire, &gt;5k Investment, Account-Manager-Assignment, Customer-Escalation</div>
+        </div>
+        <div class="who"><strong>Cockpit synthesiert</strong> ueber 5 Layer. Lars oder Matteo entscheidet auf dem Frame.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">D</div>
+        <div class="desc">
+          <div class="dh">Quarterly Strategic</div>
+          <div class="dd">ICP-Pivot, Tagline-Change, Equity, Geography, M&amp;A Direction, 500k-Mandat-Migration</div>
+        </div>
+        <div class="who"><strong>Cockpit bereitet</strong> 5-Layer-Brief vor. Operator-Workshop mit Lars und Matteo, 60-90 Min.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">07 / 12</div>
+  </section>
 
-<!-- 8. 5 Layer RC -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Architektur</div>
-<h2>RC: 5-Layer Decision Synthesis</h2>
-<div class="subtitle">Live-Pulls aus 6 Quellen. Synthese pro Entscheidung. Output im Standard-Decision-Format.</div>
-<div class="layer-grid">
-<div class="layer-card"><div class="layer-head"><div class="name">L1 Sales</div><div class="src">Close.com Live</div></div><div class="body">411 Opps, 80 Wons in 24M, 20 Active Pipeline 530k EUR</div></div>
-<div class="layer-card"><div class="layer-head"><div class="name">L1 Delivery</div><div class="src">Recruit-CRM Live</div></div><div class="body">15 Mandate, 391 Companies, 1.000+ Candidates</div></div>
-<div class="layer-card"><div class="layer-head"><div class="name">L2 Financial</div><div class="src">Google Sheet</div></div><div class="body">Liqui-Trend 637k auf 209k, Avg-Umsatz 152k/Monat</div></div>
-<div class="layer-card"><div class="layer-head"><div class="name">L3 OKR Q2</div><div class="src">Markdown + Sheet</div></div><div class="body">Aktuelle Sprint-Bindung, OKR-Owner, Deadlines</div></div>
-<div class="layer-card"><div class="layer-head"><div class="name">L4 Strategie</div><div class="src">Notion v3 MASTER</div></div><div class="body">ICP, Service-Tiers, Pricing, Tagline</div></div>
-<div class="layer-card"><div class="layer-head"><div class="name">L5 Mentoren</div><div class="src">Markdown Refs</div></div><div class="body">Adriano Hermann + Machiel Kunst, Pattern-Match</div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>08 / 18</span></div>
-</div>
-</section>
+  <!-- 08 BORING STACK -->
+  <section class="slide" id="s8">
+    <div class="label">Der Stack darunter</div>
+    <h2 class="title">Plain Files. Offene APIs.<br><span class="accent">Kein Vendor-Lock-in.</span></h2>
+    <div class="stack-cols">
+      <div class="sc">
+        <div class="sct">Live-Layer</div>
+        <div class="scn">cron + Lambda</div>
+        <div class="scd">AWS-Schedules + Python-Pulls. Laeuft auf der Uhr, kein Babysitting. <code>~$5/Monat</code>.</div>
+      </div>
+      <div class="sc lead">
+        <div class="sct">Truth-Layer</div>
+        <div class="scn">GitHub + Notion + Drive</div>
+        <div class="scd">Jeder Fakt ist eine Datei. Diff-bar, reviewbar, audit-trailed. <strong>Offene APIs. Ihr besitzt die Wahrheit.</strong></div>
+      </div>
+      <div class="sc">
+        <div class="sct">Instrument-Layer</div>
+        <div class="scn">Claude</div>
+        <div class="scd">Synthesiert die 5 Layer in einen Decision-Frame. Ersetzbar mit jedem Frontier-Model in 1 Tag.</div>
+      </div>
+    </div>
+    <div class="stack-foot">Ihr <span class="accent">oeffnet nie ein Tool das nicht schon existierte.</span> Das Cockpit lebt hinter den Tools die ihr schon nutzt.</div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">08 / 12</div>
+  </section>
 
-<!-- 9. Plus Module RC -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Plus</div>
-<h2>RC: Plus 6 Module</h2>
-<div class="subtitle">Was zwischen den Layern liegt: Stress, Voice, Beziehung, Renewal, Log, Brief.</div>
-<div class="cards-6">
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">1</span><div class="card-h">Stress-Detector</div><div class="card-body">Trigger-Liste plus Context. Blockt Decision-Push bei rotem Score.</div></div>
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">2</span><div class="card-h">Voice-Library</div><div class="card-body">12 Top-Patterns plus Pre-Submit-Checklist. Pflicht vor Outbound-Reply.</div></div>
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">3</span><div class="card-h">Customer-Map</div><div class="card-body">Workshop-Template Top-25. Decision-Maker, Risk-Flag, Strategic Value.</div></div>
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">4</span><div class="card-h">Renewal-Tracker</div><div class="card-body">Won-Cycles plus Heatmap. Welcher Kunde wird wann renewen.</div></div>
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">5</span><div class="card-h">Decisions-Log</div><div class="card-body">Outcome-Tracking nach 30 Tagen. Was hat funktioniert, was nicht.</div></div>
-<div class="card-mini" style="position:relative;padding-top:54px;"><span class="num">6</span><div class="card-h">Daily Brief</div><div class="card-body">Morgens 7:00 alle Layer in einer Email. Was muss heute entschieden werden.</div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>09 / 18</span></div>
-</div>
-</section>
+  <!-- 09 MALA ADAPTION -->
+  <section class="slide" id="s9">
+    <div class="label">Uebersetzt fuer mala markets</div>
+    <h2 class="title">Gleiche Instrumente.<br><span class="accent">Anderes Aircraft.</span></h2>
+    <div class="vow-grid">
+      <div class="vtag">Layer 01</div>
+      <div class="vdesc"><strong>Sales + Mandate-Performance Reality</strong><span>Aktive Mandate pro Brand, Pipeline, Buy-Box-Stand, Sales-Velocity pro Marketplace, Scope-Creep-Flags, ICP-Match-Klasse pro Lead</span></div>
+      <div class="vtag">Layer 02</div>
+      <div class="vdesc"><strong>Financial Dashboard</strong><span>P&amp;L pro Kunde, Margin pro Mandat, Headcount-Load, Recurring-Revenue aus Retainern vs einmaliger Project-Margin</span></div>
+      <div class="vtag">Layer 03</div>
+      <div class="vdesc"><strong>Quarterly Mandate + Revenue OKRs</strong><span>Mandate-Growth-Targets, neue Logo-Targets, Retention-Rate-Sprint, Framework-IP-Commitments pro Quartal</span></div>
+      <div class="vtag">Layer 04</div>
+      <div class="vdesc"><strong>Mala Strategy Lock</strong><span>ICP-Brand-Profile, Marketplace-Mix (Amazon/Otto/Kaufland), Strategic Marketplace Leadership Framework 5D, 500k-Mandat-Migration, Premium-Positioning</span></div>
+      <div class="vtag">Layer 05</div>
+      <div class="vdesc"><strong>Marketplace Mentor Avatars</strong><span>3-4 best-in-class Marketplace-Advisors als Voice + Pattern (TBD mit Lars und Matteo). Pattern-Match bei jeder strategischen Mala-Decision.</span></div>
+    </div>
+    <div class="vow-foot">Gleicher 5-Layer-Frame. Gleiche Live-Pull-Architektur. <strong>Andere Datenquellen, andere Mentor-Library, anderes Vokabular.</strong></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">09 / 12</div>
+  </section>
 
-<!-- 10. Mala Personas -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Adaption</div>
-<h2>Mala Adaption: 2 Personas</h2>
-<div class="subtitle">Co-Founder-Struktur. Gemeinsame Daten-Schicht, getrennte Decision-Personas.</div>
-<div class="persona-grid">
-<div class="persona-card">
-<h2>Lars-Avatar</h2>
-<div class="lens">Strategie + Sales Lens</div>
-<div class="desc">Decisions in den Bereichen Mandate-Akquise, Pricing, Strategie, Repositioning, C-Level-Beziehungen.</div>
-<div class="trigger">Trigger: &laquo;lars entscheide&raquo;</div>
-</div>
-<div class="persona-card">
-<h2>Matteo-Avatar</h2>
-<div class="lens">Operations + Marketing Lens</div>
-<div class="desc">Decisions in den Bereichen Performance, Content, Funnel, Team-Operations, Marketplace-Execution.</div>
-<div class="trigger">Trigger: &laquo;matteo entscheide&raquo;</div>
-</div>
-</div>
-<div class="data-banner">
-<div class="title">Mala-Brain, gemeinsame Daten-Schicht</div>
-<div class="body">CRM, Marketplaces, Financial, OKR, Strategie, Mentoren. Eine Quelle, zwei Lenses darueber.</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>10 / 18</span></div>
-</div>
-</section>
+  <!-- 10 SPLIT HERO: Co-Founder + 500k -->
+  <section class="slide" id="s10">
+    <div class="label">Co-Founder-Setup + Migration zum 500k-Mandat</div>
+    <h2 class="title">2 Decision-Lenses.<br><span class="accent">1 Migrationspfad zum 500k-Mandat.</span></h2>
+    <div class="g2-hero">
+      <div class="g2-col">
+        <div class="gtag">Co-Founder Setup</div>
+        <div class="gh">Lars-Avatar + Matteo-Avatar.</div>
+        <p><strong>Lars-Avatar</strong> als Strategie- und Sales-Lens. Mandate-Akquise, Pricing, Repositioning, C-Level-Beziehungen.</p>
+        <p><strong>Matteo-Avatar</strong> als Operations- und Marketing-Lens. Performance, Content, Funnel, Team-Operations, Marketplace-Execution.</p>
+        <p>Gemeinsame Daten-Schicht. Getrennte Decision-Personas. <strong>Trigger: "lars entscheide", "matteo entscheide", "mala-avatar".</strong></p>
+      </div>
+      <div class="g2-col">
+        <div class="gtag">Migrationspfad 2028</div>
+        <div class="gh">Aus dem Operating Brain wird euer Produkt.</div>
+        <p><strong>2026:</strong> Mala Decision Cockpit intern. Eure Operations laufen darueber.</p>
+        <p><strong>2027:</strong> Customer Maturity Cockpit pro Mandat. Gleicher 5-Layer-Frame, aber fuer Kunden. Treibt Pricing Richtung 50-150k pro Mandat.</p>
+        <p><strong>2028:</strong> Maturity-Cockpit als Executive-Workshop-Format. Pricing-Sprung Richtung 500k pro Mandat. <strong>Vivid Vision Ziel erreicht.</strong></p>
+      </div>
+    </div>
+    <div class="g2-foot">Das System ist <span class="accent">gleichzeitig euer Operating Brain UND der Kern eures Diagnostic Assessments.</span></div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">10 / 12</div>
+  </section>
 
-<!-- 11. 5 Layer Mala -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Architektur</div>
-<h2>Mala: 5 Layer</h2>
-<div class="subtitle">Gleiche Architektur wie RC. Marketplace-spezifische Quellen.</div>
-<div class="layer-grid">
-<div class="layer-card accent"><div class="layer-head"><div class="name">L1 Sales</div><div class="src">HubSpot / Pipedrive</div></div><div class="body">Pipeline live, Wons, Lost-Reasons, Forecast</div></div>
-<div class="layer-card accent"><div class="layer-head"><div class="name">L1 Delivery</div><div class="src">Amazon SP-API, Otto, Kaufland, Helium10/Sellics</div></div><div class="body">Sales-Velocity, Buy-Box, ACOS pro Mandat</div></div>
-<div class="layer-card accent"><div class="layer-head"><div class="name">L2 Financial</div><div class="src">Google Sheet (zu bauen)</div></div><div class="body">P&L, Liqui, Burn, Margin pro Mandat, Retainer-Tracking</div></div>
-<div class="layer-card accent"><div class="layer-head"><div class="name">L3 OKR Q2</div><div class="src">Markdown + Sheet</div></div><div class="body">Sprint-Bindung, Owner, Deadlines fuer Mala 2026</div></div>
-<div class="layer-card accent"><div class="layer-head"><div class="name">L4 Strategie</div><div class="src">Vivid Vision 2028</div></div><div class="body">Strategic Marketplace Leadership Framework, 5 Dimensionen, 25 Statements</div></div>
-<div class="layer-card accent"><div class="layer-head"><div class="name">L5 Mentoren</div><div class="src">TBD mit Lars und Matteo</div></div><div class="body">Marketplace-Advisory-Vorbilder als Voice und Pattern</div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>11 / 18</span></div>
-</div>
-</section>
+  <!-- 11 MOAT -->
+  <section class="slide" id="s11">
+    <div class="label">Warum das kein Cursor-Wochenende ist</div>
+    <h2 class="title">Jeder kann das bauen.<br><span class="accent">Einer hat es mit echten Kunden getestet.</span></h2>
+    <div class="moat-quote">
+      <div class="q">&ldquo;Der Moat ist nicht das Tool, weil jeder das bauen kann. Der Moat ist jemand der reingeschaut hat und es mit Kunden getestet hat.&rdquo;</div>
+      <div class="src">Chris zu Richard, 13.05.2026, Workshop-Check-in</div>
+    </div>
+    <div class="moat-proof">
+      <div class="mp">
+        <div class="mph">Proof 01</div>
+        <div class="mpt">4 aktive Client-Builds</div>
+        <div class="mpd">Recruiting, Marketing-Services, B2B SaaS, Private Holdings. Andere Domains, gleicher 5-Layer-Frame.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 02</div>
+        <div class="mpt">18 Monate Bauen, Brechen, Reparieren</div>
+        <div class="mpd">Jede falsche Architektur-Entscheidung gemacht und gefixt. Ihr kauft die Version die ueberlebt hat.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 03</div>
+        <div class="mpt">Jede Zeile in git, jede Decision geloggt</div>
+        <div class="mpd">30-Tage Outcome-Review auf jeder Cockpit-Decision. Das System auditet sich selber.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">11 / 12</div>
+  </section>
 
-<!-- 12. Sales + Marketing Automation -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Engine 1</div>
-<h2>Sales und Marketing Automation</h2>
-<div class="subtitle">Outbound-Pipeline plus Funnel-Tracking. Daily-Pull, Weekly-Report.</div>
-<div style="margin-top:20px;">
-<div class="engine-row"><div class="section-num">1</div><div style="flex:1;display:flex;"><div class="h">Outbound Auto-Pull</div><div class="b">HeyReach + Email + LinkedIn Daily-Sync. Reply-Rate, Booking-Rate, Lost-Reason pro Sequenz.</div></div></div>
-<div class="engine-row"><div class="section-num">2</div><div style="flex:1;display:flex;"><div class="h">Hook A/B-Tests</div><div class="b">Live-Tracking pro Hook-Variante. Reply-Lift, CPL-Differenz, Winner nach 14 Tagen.</div></div></div>
-<div class="engine-row"><div class="section-num">3</div><div style="flex:1;display:flex;"><div class="h">Landing Page</div><div class="b">Conversion-Rate pro Audience-Segment. Scroll-Depth, Form-Drop-Off, Heatmap-Anchor-Points.</div></div></div>
-<div class="engine-row"><div class="section-num">4</div><div style="flex:1;display:flex;"><div class="h">Paid Ads</div><div class="b">CPL, CTR, ROAS pro Kampagne. ICP-Audience-Performance vs Lookalike. Budget-Alert bei CPL ueber Threshold.</div></div></div>
-<div class="engine-row"><div class="section-num">5</div><div style="flex:1;display:flex;"><div class="h">Weekly Executive Report</div><div class="b">Montags 7:00. Pipeline-Stand, Hook-Winner, Asset-Performance, Naechste Schritte.</div></div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>12 / 18</span></div>
-</div>
-</section>
-
-<!-- 13. Retention Engine -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Engine 2</div>
-<h2>Retention Engine</h2>
-<div class="subtitle">Kundenverlust 15-20% in Q1 war Trigger. Frueh-Warnung statt nachtraegliche Diagnose.</div>
-<div class="cards-6" style="grid-template-rows:1fr 1fr;">
-<div class="card navy-top"><div class="card-h">Churn-Score</div><div class="card-body">Composite-Score 0-100 pro Kunde aus 6 Signalen.</div></div>
-<div class="card navy-top"><div class="card-h">Performance-Trend</div><div class="card-body">Alert bei Marketplace-Performance-Drop ueber 15% in 30 Tagen.</div></div>
-<div class="card navy-top"><div class="card-h">Aktivitaets-Heatmap</div><div class="card-body">Email + Call-Frequenz pro Account. Ghost-Risk Detection.</div></div>
-<div class="card navy-top"><div class="card-h">NPS-Proxy</div><div class="card-body">Reply-Sentiment-Analyse plus Quarterly-Survey-Light.</div></div>
-<div class="card navy-top"><div class="card-h">Renewal-Cycle</div><div class="card-body">Retainer-Renewal-Datum plus Vorlaufzeit-Erinnerung 60/30/15 Tage.</div></div>
-<div class="card navy-top"><div class="card-h">Frueh-Warnung</div><div class="card-body">Slack-Notification plus Action-Items an Account-Manager.</div></div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>13 / 18</span></div>
-</div>
-</section>
-
-<!-- 14. Voice + Stress + Customer Map -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Human Layer</div>
-<h2>Voice, Stress, Customer-Map</h2>
-<div class="subtitle">Die drei Layer, die das Cockpit menschlich machen.</div>
-<div class="cards-3">
-<div class="card navy-top">
-<div class="card-h">Voice-Library</div>
-<ul style="margin-top:6px;font-size:0.85em;">
-<li>Pro Founder 20 LinkedIn + 10 Slack + 10 Email Beispiele</li>
-<li>Pattern-Atlas mit Signature-Phrases und Sperrwoertern</li>
-<li>Pre-Submit-Checklist vor jeder Outbound-Antwort</li>
-<li>Lars und Matteo separat trainiert</li>
-</ul>
-</div>
-<div class="card navy-top">
-<div class="card-h">Stress-Detector</div>
-<ul style="margin-top:6px;font-size:0.85em;">
-<li>Trigger-Liste: Cashflow, Kundenverlust, Team-Tension</li>
-<li>Score 0-100 plus Pause-Empfehlung bei Rot</li>
-<li>Blockt Decision-Push wenn ueberlastet</li>
-<li>Schuetzt vor schlechten Decisions in Krisen</li>
-</ul>
-</div>
-<div class="card navy-top">
-<div class="card-h">Customer-Map</div>
-<ul style="margin-top:6px;font-size:0.85em;">
-<li>Workshop Top-25 Mandate mit Lars und Matteo</li>
-<li>Decision-Maker, Beziehung, Risk-Flag, Renewal-Datum</li>
-<li>Pflicht-Read vor jeder Kunden-Entscheidung</li>
-<li>Update Quartalsweise</li>
-</ul>
-</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>14 / 18</span></div>
-</div>
-</section>
-
-<!-- 15. Roadmap 2026 -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Plan</div>
-<h2>Roadmap 2026</h2>
-<div class="subtitle">Vom Operations-Sprint zum vollen Cockpit. 3 Quartale.</div>
-<div class="roadmap-grid">
-<div class="q-card">
-<div class="q-head">
-<div class="q">Q2</div>
-<div class="tag">Fundament</div>
-<div class="when">Mai bis Juni</div>
-</div>
-<div class="q-body">
-<ul>
-<li>Mala-Brain Setup + Team-Onboarding</li>
-<li>6 Cron Jobs live</li>
-<li>ICP-Definition + Match-Skript</li>
-<li>Mala-ICP Skill</li>
-<li>Asset Foundation Sprint</li>
-<li>Erster Meta Test</li>
-</ul>
-</div>
-</div>
-<div class="q-card">
-<div class="q-head">
-<div class="q">Q3</div>
-<div class="tag">Cockpit-Basis</div>
-<div class="when">Juli bis September</div>
-</div>
-<div class="q-body">
-<ul>
-<li>L1 Sales-Layer (HubSpot/Pipedrive Bridge)</li>
-<li>L1 Delivery-Layer (Amazon SP-API + Co)</li>
-<li>L2 Financial-Layer (P&L Sheet)</li>
-<li>Daily Brief Email 7:00</li>
-<li>Decisions-Log Setup</li>
-<li>Erste Avatar-Decisions live</li>
-</ul>
-</div>
-</div>
-<div class="q-card">
-<div class="q-head">
-<div class="q">Q4</div>
-<div class="tag">Full Stack</div>
-<div class="when">Oktober bis Dezember</div>
-</div>
-<div class="q-body">
-<ul>
-<li>L3 OKR + L4 Strategie + L5 Mentoren</li>
-<li>Voice-Library Lars + Matteo</li>
-<li>Stress-Detector</li>
-<li>Customer-Beziehungs-Map Workshop</li>
-<li>Retention Engine</li>
-<li>Sales + Marketing Automation Dashboard</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>15 / 18</span></div>
-</div>
-</section>
-
-<!-- 16. 2027 + 2028 Migration -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Horizon</div>
-<h2>2027 und 2028</h2>
-<div class="subtitle">Vom internen Cockpit zum Produkt fuer Mandate. Migrationspfad zum 500k-Ziel.</div>
-<div style="margin-top:24px;">
-<div class="phase-row"><div class="phase-year">2027<br>H1</div><div class="phase-content"><div class="h">Customer Maturity Cockpit Pilot</div><div class="b">Mit 2-3 bestehenden Mandate. Daten ziehen, gegen Strategic Marketplace Leadership Framework scoren. Live-Score pro Dimension.</div></div></div>
-<div class="phase-row"><div class="phase-year">2027<br>H2</div><div class="phase-content"><div class="h">Pro-Mandat Live-Scoring</div><div class="b">Maturity-Score pro Quartal. Executive Report Weekly fuer C-Level. Cockpit als Teil des Mandate-Pakets, treibt Pricing Richtung 50-150k pro Mandat.</div></div></div>
-<div class="phase-row"><div class="phase-year">2028</div><div class="phase-content"><div class="h">Workshop-Lizenz Format</div><div class="b">Maturity Cockpit als Executive Workshop standardisiert. Lizenzierung des Frameworks. Pricing-Sprung Richtung 500k pro Mandat. Vivid Vision 2028 Ziel erreicht.</div></div></div>
-</div>
-<div class="note">Schliesst den fehlenden Migrationspfad vom heutigen Performance-Pricing zum 500k-Mandat. Das System ist gleichzeitig euer Operating Brain UND der Kern des Diagnostic Assessments, das ihr ab 2028 verkauft.</div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>16 / 18</span></div>
-</div>
-</section>
-
-<!-- 17. Investment -->
-<section>
-<div class="slide-pad slide-pad-cream">
-<div class="kicker">Pricing</div>
-<h2>Investment 2026 bis 2028</h2>
-<div class="subtitle">Phasen-Pricing. Setup-Investment 2026, Mandate-Hebel 2027, Workshop-Sprung 2028.</div>
-<table class="invest-table" style="margin-top:24px;">
-<tr><th>Phase</th><th>Was</th><th>Preis-Idee</th><th>Hebel</th></tr>
-<tr><td class="phase">Q2 2026</td><td>Brain Setup + Cron + ICP Skill + ICP-Match Pipeline</td><td>Im laufenden Retainer</td><td>Operations entlastet, Quick Win</td></tr>
-<tr class="zebra"><td class="phase">Q3-Q4 2026</td><td>Decision Cockpit voll (Lars + Matteo Personas)</td><td>Setup 30-50k + Maintenance 5-8k/Monat</td><td>Operating Brain, Decisions schneller und besser</td></tr>
-<tr><td class="phase">2027</td><td>Customer Maturity Cockpit pro Mandat</td><td>Bestandteil 50-150k/Mandat Pricing</td><td>Cockpit wird Teil des Produkts</td></tr>
-<tr class="zebra"><td class="phase">2028</td><td>Maturity Workshop-Format Lizenz</td><td>Pricing Richtung 500k/Mandat</td><td>Vivid Vision Ziel erreicht</td></tr>
-</table>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>17 / 18</span></div>
-</div>
-</section>
-
-<!-- 18. Ehrlich + Morgen Decisions -->
-<section data-background-color="#1E2761">
-<div class="slide-pad slide-pad-dark" style="position:relative;">
-<div class="title-accent"></div>
-<div class="kicker">Schluss</div>
-<h2 style="color:var(--white);">Ehrlich</h2>
-<div class="honest-block">
-<p>Das ist kein autonomer Twin. Decision-Support, Pilot bleibt Mensch. Lars und Matteo entscheiden schneller, besser informiert, mit konsistenter Voice. Bei RC: 6 Monate Build, 90% Coverage jetzt.</p>
-</div>
-<h3 style="color:var(--white);margin-bottom:0.6em;">Morgen entscheiden</h3>
-<div class="decisions-grid">
-<div class="decision-row"><div class="section-num">1</div><div><div class="h">Setup-Block jetzt</div><div class="b">GitHub mala-brain Init + Notion-Mirror, 30 Min im Call</div></div></div>
-<div class="decision-row"><div class="section-num">2</div><div><div class="h">Sales-CRM</div><div class="b">HubSpot, Pipedrive, oder anderes welches Tool wird Standard</div></div></div>
-<div class="decision-row"><div class="section-num">3</div><div><div class="h">Marketplace-Tools</div><div class="b">Welche APIs / Helium10 / Sellics / Otto Partner / Kaufland</div></div></div>
-<div class="decision-row"><div class="section-num">4</div><div><div class="h">Top-25 Customer</div><div class="b">Liste fuer Customer-Map-Workshop, Termin in Q3</div></div></div>
-<div class="decision-row"><div class="section-num">5</div><div><div class="h">Voice-Sammlung</div><div class="b">Start jetzt, 4 Wochen Sammelphase fuer Lars und Matteo</div></div></div>
-<div class="decision-row"><div class="section-num">6</div><div><div class="h">Q3 Cockpit Go</div><div class="b">Decision Cockpit Build Go/No-Go bis Ende Juni</div></div></div>
-</div>
-<div class="bottom-accent"></div>
-<div class="footer-meta"><span>Mala Decision Cockpit &nbsp;|&nbsp; Chris Erler &nbsp;|&nbsp; 19.05.2026</span><span>18 / 18</span></div>
-</div>
-</section>
+  <!-- 12 PHASES + CTA -->
+  <section class="slide" id="s12">
+    <div class="label">Wie wir das bauen</div>
+    <h2 class="title">10 Wochen zum Live-Cockpit.<br><span class="accent">Zwei Phasen. Owned by Mala.</span></h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="pp">Phase 01<br>Woche 1-4</div>
+        <div class="pcontent">
+          <div class="pt">Architektur + erste 3 Layer</div>
+          <div class="pd">Sales-CRM-Bridge, Mandate-Performance-Bridge (Amazon SP-API + Otto + Kaufland), Financial-Pull, Daily Pipeline-Diff. <strong>Live in Woche 4.</strong></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pp">Phase 02<br>Woche 5-10</div>
+        <div class="pcontent">
+          <div class="pt">OKRs, Strategy Lock, Mentor Avatars, Voice Library, Stress Detector</div>
+          <div class="pd">Volles 5-Layer-Cockpit. Voice-Checked Drafts pro Founder. Stress-Detection. Renewal-Tracker. Customer-Beziehungs-Map. <strong>Volles Operating-State in Woche 10.</strong></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pp">Outcome<br>Tag 70</div>
+        <div class="pcontent">
+          <div class="pt">Ein Working Cockpit, owned by mala markets</div>
+          <div class="pd">Aller Code in eurem git. Infrastruktur auf eurem AWS (~50 EUR/Monat). Quarterly Tune-ups auf Day-Rate. <strong>Scope und Shape locked im 60-Min-Call.</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="eng-cta">
+      <div class="ch">Naechster Schritt</div>
+      <div class="ct">Setup-Block 30 Min im Call morgen. Mala-Brain Repo + Notion-Mirror live. Plus 60-Min Live-Walkthrough RC-Cockpit, real screen, real numbers. <a href="https://calendly.com/chris-gdvo/30min">calendly.com/chris-gdvo/30min</a></div>
+    </div>
+    <div class="brand">Erler Ventures &middot; fuer mala markets</div>
+    <div class="page-num">12 / 12</div>
+  </section>
 
 </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+<div class="nav-hint">arrow keys to navigate</div>
+
 <script>
-Reveal.initialize({
-  width: 1600,
-  height: 900,
-  margin: 0,
-  hash: true,
-  controls: true,
-  progress: true,
-  slideNumber: false,
-  transition: 'fade',
-  backgroundTransition: 'fade',
-  center: false,
-  embedded: false
-});
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
 </script>
 </body>
 </html>
