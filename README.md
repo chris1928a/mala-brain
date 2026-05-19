@@ -1,8 +1,10 @@
 # mala brain - v3 Cloud-Architektur Template
 
-> **Gesamtplan:** [Mala Digital Company Twin Deck](https://chris1928a.github.io/mala-brain/decks/digital-twin/) (16 Slides, 2-Jahres-Roadmap zum 500k-Mandat)
+> **Gesamtplan-Vision:** [Mala Digital Company Twin Deck](https://chris1928a.github.io/mala-brain/decks/digital-twin/) (16 Slides, 2-Jahres-Roadmap zum 500k-Mandat)
 >
-> **Diese Woche, Schritt 1:** [GETTING-STARTED.md](GETTING-STARTED.md) (zwei konkrete Schritte für Lars und Matteo)
+> **Master Project Management Plan:** [PROJECT-MANAGEMENT.md](PROJECT-MANAGEMENT.md) (alles was wir tracken, Status pro Task, Owner, Deadlines)
+>
+> **Setup für Dieter (Anfänger):** [docs/dieter-claude-code-setup.md](docs/dieter-claude-code-setup.md) (Schritt-für-Schritt Claude Code plus GitHub auf dem PC)
 
 ---
 
