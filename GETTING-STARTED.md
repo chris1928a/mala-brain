@@ -2,6 +2,10 @@
 
 Hi Lars und Matteo. Das ist die einzige Datei die ihr diese Woche braucht. Zwei Schritte, mehr nicht. Rest kommt nächste Woche.
 
+> **Der Gesamtplan ist das Mala Digital Company Twin Deck:** [chris1928a.github.io/mala-brain/decks/digital-twin/](https://chris1928a.github.io/mala-brain/decks/digital-twin/)
+>
+> Was unten kommt ist Schritt 1 davon. Das volle Bild plus 2-Jahres-Roadmap zum 500k-Mandat steht im Deck.
+
 ## Schritt 1, Chris vollen Zugriff geben
 
 Damit Chris den aktuellen Stand sehen und reviewen kann.

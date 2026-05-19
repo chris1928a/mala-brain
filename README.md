@@ -1,7 +1,8 @@
 # mala brain - v3 Cloud-Architektur Template
 
-> **Diese Woche neu im Repo, lest zuerst:** [GETTING-STARTED.md](GETTING-STARTED.md)
-> Zwei Schritte für Lars und Matteo, mehr kommt nächste Woche.
+> **Gesamtplan:** [Mala Digital Company Twin Deck](https://chris1928a.github.io/mala-brain/decks/digital-twin/) (16 Slides, 2-Jahres-Roadmap zum 500k-Mandat)
+>
+> **Diese Woche, Schritt 1:** [GETTING-STARTED.md](GETTING-STARTED.md) (zwei konkrete Schritte für Lars und Matteo)
 
 ---
 
