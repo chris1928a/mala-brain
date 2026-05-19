@@ -6,7 +6,7 @@ PM, Capa, Customers, Playbooks. Dieter-Hauptbereich.
 
 - [`customers/`](customers/) - Pro aktivem Mandat ein Folder mit `profile.md` (Dieter plus Marketplace Manager schreiben)
 - [`04-operations/playbooks/`](playbooks/) - Operative Standards (Onboarding, PPC, Reporting, Handover, Escalation)
-- [`sprints/`](sprints/) - 2-Wochen-Sprint-Plaene plus aktueller Sprint
+- [`sprints/`](sprints/) - 2-Wochen-Sprint-Pläne plus aktueller Sprint
 
 ## Aktueller Sprint
 

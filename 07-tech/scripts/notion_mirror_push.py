@@ -168,7 +168,7 @@ def rich(block_type: str, text: str) -> dict:
 
 
 def create_or_update_page(token: str, parent_id: str, doc: dict, headers: dict) -> dict:
-    """Erstellt eine neue Sub-Page unter parent_id. Idempotency später ueber Log-File."""
+    """Erstellt eine neue Sub-Page unter parent_id. Idempotency später über Log-File."""
     md_path = REPO_ROOT / doc["path"]
     if not md_path.exists():
         return {"ok": False, "error": f"File fehlt: {doc['path']}"}

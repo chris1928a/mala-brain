@@ -20,7 +20,7 @@ Anlass:
 ## Decisions
 ## Action Items pro Owner
 ## Kontext-Updates
-## Naechster Termin
+## Nächster Termin
 ```
 
 ## Aktuell

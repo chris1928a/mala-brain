@@ -63,7 +63,7 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - AI-Models: Claude Sonnet 4.6 (default), Claude Opus 4.7 (komplexe Decisions)
 - Compute: Hetzner-Server für Cron-Jobs (ersetzt Make + n8n im kritischen Pfad)
 - Master Truth: GitHub `chris1928a/mala-brain`
-- Read-und-Write-UI fuer Team: Notion (PM-SSOT seit 19.05.)
+- Read-und-Write-UI für Team: Notion (PM-SSOT seit 19.05.)
 - Bulk-Files: Dropbox (ab 27.04. statt Google Drive)
 - Website: Migration WordPress zu Astro + GitHub + Render + Posthog (EO-Empfehlung 11.05.)
 - Legacy: n8n + Airtable bleiben für Listings-Workflows, aus dem Brain-Pfad raus
@@ -73,8 +73,8 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - 2-Wochen-Sprints, ein Thema pro Sprint
 - Sprint-Kickoff Mo der ersten Woche
 - Mid-Sprint-Check Fr der ersten Woche
-- Sprint-Review Mo der dritten Woche (gleichzeitig naechster Kickoff)
-- Sprint-Plaene in `04-operations/sprints/`
+- Sprint-Review Mo der dritten Woche (gleichzeitig nächster Kickoff)
+- Sprint-Pläne in `04-operations/sprints/`
 - Decisions in `decisions/` mit 30-Tage Outcome-Review
 - Meeting-Notes in `05-meetings/`
 

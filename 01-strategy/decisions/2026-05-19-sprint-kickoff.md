@@ -72,7 +72,7 @@
 
 - **Wer:** Lars, Matteo, Chris
 - **Wann:** 19.05.2026
-- **Kontext:** Founder Twin (Lars + Matteo) plus Team Twin auf shared GitHub-Brain. Synct ueber Dropbox plus Cloud-Systeme.
+- **Kontext:** Founder Twin (Lars + Matteo) plus Team Twin auf shared GitHub-Brain. Synct über Dropbox plus Cloud-Systeme.
 - **Decision:** Twin-Architektur ist gelockt. Founder Twin ab Sprint KW21+22 implementieren, Team Twin ab Sprint KW23+24.
 - **Outcome-Review-Date:** 16.06.2026 (nach Sprint 2)
 - **Owner für Review:** Chris (Architektur)

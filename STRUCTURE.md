@@ -15,7 +15,7 @@ Master-Mapping der Repo-Struktur. Diese Datei ist die Quelle für den Notion-Mir
 | `06-finance/` | **06 Finance** | P&L, Margin pro Mandat, Retainer-Tracking, Förderbudgets (restricted) | Lars |
 | `07-tech/` | **07 Tech** | Brain-Architektur, Skripte, Skills, Workflows, Memory, Voice-Rules | Chris + Junior Dev |
 | `08-knowledge/` | **08 Knowledge** | Externes Wissen, Mentor-Referenzen, Industry-Patterns | offen |
-| `decks/` | **Decks** | Pitches, Praesentationen, Live unter chris1928a.github.io/mala-brain/decks/ | Chris |
+| `decks/` | **Decks** | Pitches, Präsentationen, Live unter chris1928a.github.io/mala-brain/decks/ | Chris |
 
 ## Root-Files (immer sichtbar in GitHub-Page)
 
@@ -61,12 +61,12 @@ Content, Ads, Voice. Substack-Drafts, LinkedIn-Posts, Ad-Creatives, Landing-Page
 
 ### 04-operations/
 
-PM, Capa, Customers, Playbooks. Dieter-Hauptbereich plus Sprint-Plaene.
+PM, Capa, Customers, Playbooks. Dieter-Hauptbereich plus Sprint-Pläne.
 
 - `customers/` Pro Mandat ein Folder mit `profile.md`, geschrieben von Dieter plus Marketplace Manager
 - `04-operations/customers/_TEMPLATE/profile.md` Skeleton für neue Mandate
 - `04-operations/playbooks/` Operative Standards (Onboarding, PPC, Reporting, Handover, Escalation)
-- `sprints/` 2-Wochen-Sprint-Plaene
+- `sprints/` 2-Wochen-Sprint-Pläne
 - `sprints/2026-kw21-22-icp-kunden.md` Aktueller Sprint
 
 ### 05-meetings/
@@ -108,7 +108,7 @@ Externes Wissen. Mentor-Referenzen, Industry-Patterns, Frameworks die Mala adapt
 
 ### decks/
 
-Pitches plus Praesentationen. Live-Deck unter https://chris1928a.github.io/mala-brain/decks/digital-twin/.
+Pitches plus Präsentationen. Live-Deck unter https://chris1928a.github.io/mala-brain/decks/digital-twin/.
 
 ## Notion-Mirror Logik
 

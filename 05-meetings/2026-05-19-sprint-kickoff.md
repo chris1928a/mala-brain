@@ -17,7 +17,7 @@ Team einigt sich auf Notion als Single Source of Truth für PM, GitHub als Backe
 5. **Hetzner ersetzt Make plus n8n** im kritischen Brain-Pfad. n8n + Airtable bleiben für Listings-Workflows.
 6. **Rollen-Lock:** Lars = Strategie + Sales + Finanzen + Cashflow. Matteo = Operations + Marketing. Dieter = PM + Controlling + Kapazitätsplanung.
 7. **KI-Werkstudent:** Marcel als heißer Kandidat, Screening läuft.
-8. **Digital Twins:** Founder-Twin (Lars + Matteo) plus Team-Twin auf shared GitHub-Brain, ueber Dropbox synct.
+8. **Digital Twins:** Founder-Twin (Lars + Matteo) plus Team-Twin auf shared GitHub-Brain, über Dropbox synct.
 
 ## Action Items
 
@@ -83,7 +83,7 @@ Team einigt sich auf Notion als Single Source of Truth für PM, GitHub als Backe
 | Notion-Permissions für Chris | Internal Connection Token von Lars ausstehend. Blockiert Notion-Mirror. |
 | Grafikdesigner-Replacement | Position frei zum Monatsende, Screening läuft. |
 | Marcel KI-Werkstudent | Kandidat identifiziert, Interview ausstehend. |
-| Junior Dev / KI-Stelle | Ausschreibung online seit 11.05., Profil-Shape auf GitHub + Python + Claude Code. |
+| Junior Dev / KI-Stelle | Äuschreibung online seit 11.05., Profil-Shape auf GitHub + Python + Claude Code. |
 
 ## Sprint KW21+22 Fokus
 
@@ -93,7 +93,7 @@ Volldetails in docs/sprints/2026-kw21-22-icp-kunden.md. Highlights:
 - Mid-Sprint-Check Fr 23.05.
 - Sprint-Review Mo 02.06.
 
-## Naechster Call
+## Nächster Call
 
 - Mid-Sprint-Check Fr 23.05.
 - Sprint-Review Mo 02.06.

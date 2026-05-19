@@ -33,7 +33,7 @@ mala markets Workspace
 ├── 05 Tech
 │   ├── Brain v3 Architektur
 │   ├── Relevio Spec
-│   ├── VM-Vertraege
+│   ├── VM-Verträge
 │   └── Tech-Stack-Decisions
 └── 06 People
     ├── Team-Liste

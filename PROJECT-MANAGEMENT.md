@@ -23,7 +23,7 @@ Das ist der kritische Test. Wenn Dieter das System eigenständig benutzen kann, 
 | Dieter akzeptiert mala-brain Repo-Invite | Dieter | open | github.com/chris1928a/mala-brain/invitations |
 | Dieter klont das Repo lokal mit GitHub Desktop | Dieter | open | [00-start-here/dieter-claude-code-setup.md](00-start-here/dieter-claude-code-setup.md#schritt-4) |
 | Dieter macht erste Test-Branch und PR 1 (customer profile) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-1-eigener-customer-folder-anlegen) |
-| Dieter macht PR 2 (playbook client-onboarding) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-2-playbook-ergaenzen) |
+| Dieter macht PR 2 (playbook client-onboarding) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-2-playbook-ergänzen) |
 | Dieter macht PR 3 (capa-week-21 Decision) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-3-eigene-capa-auslastung-als-decision-log) |
 | Sprint-Mid-Check Fr 23.05.: was funktioniert, was hakt | Group | open | TBD 05-meetings/2026-05-23-mid-check.md |
 

@@ -14,7 +14,7 @@ mala markets Dropbox
 │       └── ...
 ├── 02 Internal
 │   ├── Förder-Dokumente
-│   ├── Vertraege (VM, Subscriptions, etc.)
+│   ├── Verträge (VM, Subscriptions, etc.)
 │   ├── Finance (DATEV-Belege)
 │   └── HR
 ├── 03 Sales-Assets

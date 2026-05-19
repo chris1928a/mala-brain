@@ -8,7 +8,7 @@ Content, Ads, Voice-Library, Landing-Pages, Substack, LinkedIn.
 - `voice/matteo.md` - Matteo-Voice-Library
 - `content/substack/` - Substack-Drafts
 - `content/linkedin/` - LinkedIn-Posts plus Newsletter
-- `ads/google/` - Google Ads Creatives, Keyword-Plaene
+- `ads/google/` - Google Ads Creatives, Keyword-Pläne
 - `ads/meta/` - Meta Retargeting plus Video-Ads
 - `landing-pages/` - LP-Drafts und A/B-Test-Pläne
 

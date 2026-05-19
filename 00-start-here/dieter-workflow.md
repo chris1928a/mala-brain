@@ -27,7 +27,7 @@ Wie Dieter im mala-brain Repo arbeitet. Format: was wo liegt, was Dieter bewegt,
 2. git checkout -b pm/<kurzes-thema>
 3. Datei editieren oder neu anlegen im Dieter-Bereich
 4. git add <datei>
-5. git commit -m "pm: <was sich geaendert hat>"
+5. git commit -m "pm: <was sich geändert hat>"
 6. git push origin pm/<kurzes-thema>
 7. PR auf GitHub eröffnen, Reviewer aus Permissions-Tabelle setzen
 ```

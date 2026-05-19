@@ -23,7 +23,7 @@
 | [`06-finance/`](06-finance/) | P&L, Margin, Retainer (restricted) | 💰 06 Finance |
 | [`07-tech/`](07-tech/) | Brain-Architektur, Skripte, Skills, Workflows | 🔧 07 Tech |
 | [`08-knowledge/`](08-knowledge/) | Externes Wissen, Mentor-Referenzen, Frameworks | 📚 08 Knowledge |
-| [`decks/`](decks/) | Pitches plus Praesentationen | 🎤 Decks |
+| [`decks/`](decks/) | Pitches plus Präsentationen | 🎤 Decks |
 
 ---
 
