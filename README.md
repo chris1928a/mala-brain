@@ -50,30 +50,39 @@ Dropbox (nur Dateien / Long-Form Content)
 
 | Folder | Zweck |
 |---|---|
-| `docs/` | Architektur-Doku, Voice-Rules, Linking-Konventionen |
+| `decisions/` | Strategische Decisions mit 30-Tage Outcome-Review (eine pro File, YYYY-MM-DD-thema.md) |
+| `decks/` | Pitches und Praesentationen (Mala Digital Twin Deck live: chris1928a.github.io/mala-brain/decks/digital-twin/) |
+| `docs/` | Architektur-Doku, Voice-Rules, Linking-Konventionen, Team-Permissions, Onboarding |
+| `docs/icp/` | ICP-Profile und Template fuer Lars Founder-Interviews |
+| `docs/meetings/` | Strukturierte Meeting-Notes pro Call (YYYY-MM-DD-thema.md) |
+| `docs/sprints/` | Sprint-Plaene pro 2-Wochen-Sprint (YYYY-kw##-##-thema.md) |
 | `skills/` | Alle mala-Skills, jeder Skill hat eigenes Folder mit `SKILL.md` |
-| `skills/_shared/` | Geteilte Voice-Rules und Notion-Defaults für alle Skills |
-| `scripts/` | Python/Shell-Scripts für Automation |
+| `skills/_shared/` | Geteilte Voice-Rules und Notion-Defaults fuer alle Skills |
+| `scripts/` | Python/Shell-Scripts fuer Automation (z. B. notion_mirror_push.py) |
 | `memory/` | Cross-Session Memory-Files (MEMORY.md als Index) |
 | `workflows/` | Wiederverwendbare AI-Workflows (z. B. Call-Analytics) |
 | `.claude/` | Cloud Code Settings + Project-Level CLAUDE.md |
 
-## Setup-Schritte für Lars und Matteo
+## Stand 19.05.2026 (Sprint-Kickoff)
 
-1. Diesen Folder als GitHub-Repo nach `mala-markets/mala-brain` pushen (private)
-2. Notion-Workspace strukturieren nach `docs/notion-linking.md`
-3. Dropbox-Folder strukturieren nach `docs/dropbox-linking.md`
-4. Cloud Code Setup: bei jedem mala-Repo `CLAUDE.md` referenzieren
-5. Voice-Rules aus `docs/voice-rules.md` in alle AI-Skills übernehmen
-6. Skill-Templates in `skills/relevio-dashboard/` und `skills/call-analytics/` als Vorlage nutzen
+Aktueller Sprint: KW21+22, Thema ICP-Definition + Kunden-Prozess-Automatisierung. Sprint-Plan in [docs/sprints/2026-kw21-22-icp-kunden.md](docs/sprints/2026-kw21-22-icp-kunden.md).
+
+Letzter Call: [docs/meetings/2026-05-19-sprint-kickoff.md](docs/meetings/2026-05-19-sprint-kickoff.md). Decisions in [decisions/2026-05-19-sprint-kickoff.md](decisions/2026-05-19-sprint-kickoff.md).
 
 ## Quick-Reference
 
-- **Voice-Rules (für jeden AI-Output):** [docs/voice-rules.md](docs/voice-rules.md)
+- **Onboarding fuer neue Team-Member:** [docs/onboarding.md](docs/onboarding.md)
+- **Team-Permissions (9 Rollen):** [docs/team-permissions.md](docs/team-permissions.md)
+- **Aktueller Sprint:** [docs/sprints/2026-kw21-22-icp-kunden.md](docs/sprints/2026-kw21-22-icp-kunden.md)
+- **ICP-Template fuer Lars:** [docs/icp/template.md](docs/icp/template.md)
+- **Decisions-Log:** [decisions/](decisions/)
+- **Meeting-Notes:** [docs/meetings/](docs/meetings/)
+- **Voice-Rules:** [docs/voice-rules.md](docs/voice-rules.md)
 - **Architektur-Doku:** [docs/architecture.md](docs/architecture.md)
 - **Notion-Verlinkung:** [docs/notion-linking.md](docs/notion-linking.md)
 - **Dropbox-Verlinkung:** [docs/dropbox-linking.md](docs/dropbox-linking.md)
 - **Memory-Index:** [memory/MEMORY.md](memory/MEMORY.md)
+- **Pitch-Deck Mala Digital Twin:** [chris1928a.github.io/mala-brain/decks/digital-twin/](https://chris1928a.github.io/mala-brain/decks/digital-twin/)
 
 ## Wichtige Voice-Rules (Auszug)
 

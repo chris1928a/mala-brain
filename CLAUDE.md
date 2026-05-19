@@ -58,13 +58,37 @@ Jeder Skill hat:
 
 Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 
-## Stack
+## Stack (Stand 19.05.2026, im Sprint-Kickoff gelockt)
 
-- AI-Models: Claude Sonnet 4.6 (default), Claude Opus 4.7 (für komplexe Decisions)
-- Backend (P03 Phase 1): VM-Stack-Skelett (WeWeb + Xano + n8n zu Full-Code), Phase 2 Custom-Stack TBD
-- Frontend (P03): TBD nach VM-Phase-1
-- Memory: GitHub + Notion (Open API) + Dropbox (files only)
-- Automation: NICHT N8N (deprecated). Server-gehostete Cloud-Code-Workflows.
+- AI-Models: Claude Sonnet 4.6 (default), Claude Opus 4.7 (komplexe Decisions)
+- Compute: Hetzner-Server für Cron-Jobs (ersetzt Make + n8n im kritischen Pfad)
+- Master Truth: GitHub `chris1928a/mala-brain`
+- Read-und-Write-UI fuer Team: Notion (PM-SSOT seit 19.05.)
+- Bulk-Files: Dropbox (ab 27.04. statt Google Drive)
+- Website: Migration WordPress zu Astro + GitHub + Render + Posthog (EO-Empfehlung 11.05.)
+- Legacy: n8n + Airtable bleiben für Listings-Workflows, aus dem Brain-Pfad raus
+
+## Sprint-Rhythmus (seit 19.05.2026)
+
+- 2-Wochen-Sprints, ein Thema pro Sprint
+- Sprint-Kickoff Mo der ersten Woche
+- Mid-Sprint-Check Fr der ersten Woche
+- Sprint-Review Mo der dritten Woche (gleichzeitig naechster Kickoff)
+- Sprint-Plaene in `docs/sprints/`
+- Decisions in `decisions/` mit 30-Tage Outcome-Review
+- Meeting-Notes in `docs/meetings/`
+
+## Team-Rollen (Stand 07.05.2026)
+
+- Lars Seuss = Strategie + Sales + Finanzen + Cashflow
+- Matteo Giazzi = Operations + Marketing + Funnel
+- Dieter = PM + Controlling + Kapazitaetsplanung
+- Jerome, Clarissa, Nick, Leon = Marketplace Manager (kundenspezifisch ohne Zahlen)
+- Fabian = Praktikant Marketplace (Read-only)
+- Laureen = Assistentin + Marketing Manager (eigene Bahn)
+- Junior Dev (KI-Stelle) = TBD, Profil GitHub + Python + Claude Code, Marcel als Kandidat
+
+Volle Permission-Matrix in `docs/team-permissions.md`.
 
 ## Out-of-Scope für AI
 

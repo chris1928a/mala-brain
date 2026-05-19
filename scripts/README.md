@@ -11,11 +11,14 @@ Python und Shell Scripts für Automation, Dev-Tooling, einmalige Migrationen.
 
 ## Aktuelle Scripts
 
-(Wird gefüllt sobald Scripts existieren. Beispiele:)
+- `scripts/notion_mirror_push.py` - Pushed mala-brain Docs (Team-Permissions, Sprints, Onboarding, ICP-Template, Meeting-Notes, Decisions) als Notion-Pages in den Mala-Workspace. Erwartet `NOTION_TOKEN` und `NOTION_PARENT_PAGE_ID` als Env-Vars. Wartet auf Lars' Internal Connection Token (Stand 19.05.2026).
+
+### Geplant
 
 - `scripts/sync_dropbox_to_notion.py` - Dropbox-Files in Notion-Pages embedden
-- `scripts/migrate_n8n_to_code.py` - N8N-Workflows zu Python-Code (one-time)
+- `scripts/migrate_n8n_to_code.py` - n8n-Workflows zu Python-Code (one-time)
 - `scripts/score_call_transcript.py` - Call-Analytics-Bot CLI
+- `scripts/icp_match.py` - ICP-Klassifikation P1/P2/P3/OUT auf neue Leads (Adaption von RC tools/icp_match_close.py)
 
 ## Setup
 
