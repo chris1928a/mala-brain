@@ -45,7 +45,7 @@ Wenn `Claude` in der Connection-Liste fehlt: einmal `Settings` → `Connections`
 
 ### Schritt 4, Dropbox-Linking
 
-Dropbox ist verbunden über Dropbox-MCP (Beta). Setup-Anleitung in `docs/dropbox-linking.md`.
+Dropbox ist verbunden über Dropbox-MCP (Beta). Setup-Anleitung in `07-tech/dropbox-linking.md`.
 
 ## Tägliche Arbeitsweise
 
@@ -78,7 +78,7 @@ Dropbox ist verbunden über Dropbox-MCP (Beta). Setup-Anleitung in `docs/dropbox
 
 **Wie ändere ich eine Voice-Rule?**
 
-PR gegen `docs/voice-rules.md`. Lars und Matteo beide reviewen. Nach Merge ist die Regel sofort aktiv für alle Drafts.
+PR gegen `07-tech/voice-rules.md`. Lars und Matteo beide reviewen. Nach Merge ist die Regel sofort aktiv für alle Drafts.
 
 **Wie sehe ich was sich diese Woche im Brain geändert hat?**
 
@@ -90,7 +90,7 @@ Oder in GitHub: `Pulse` Tab vom Repo.
 
 **Was wenn ich Notion-Edit-Rechte nicht habe?**
 
-Frag Lars oder Matteo. Permissions stehen in `docs/team-permissions.md`.
+Frag Lars oder Matteo. Permissions stehen in `00-start-here/team-permissions.md`.
 
 ## Bei Problemen
 
@@ -101,8 +101,8 @@ Frag Lars oder Matteo. Permissions stehen in `docs/team-permissions.md`.
 ## Pflichtlektüre vor erstem Push
 
 1. `CLAUDE.md` (Sprache, Voice-Rules, Architektur-Hierarchie)
-2. `docs/voice-rules.md` (Schreibstil)
-3. `docs/team-permissions.md` (was darf ich)
-4. `docs/sprints/` (aktueller Sprint-Plan)
+2. `07-tech/voice-rules.md` (Schreibstil)
+3. `00-start-here/team-permissions.md` (was darf ich)
+4. `04-operations/sprints/` (aktueller Sprint-Plan)
 
 Letzter Stand: 19.05.2026.

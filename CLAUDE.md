@@ -46,7 +46,7 @@ Cross-Session Memory liegt in `memory/MEMORY.md` (Index) plus einzelne Memory-Fi
 
 ## Decisions
 
-Große Entscheidungen via Big Decision Framework (Six Thinking Hats + Strategic Reflection). Template in `docs/decision-framework.md`.
+Große Entscheidungen via Big Decision Framework (Six Thinking Hats + Strategic Reflection). Template in `07-tech/decision-framework.md`.
 
 ## Skill-Konvention
 
@@ -74,9 +74,9 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - Sprint-Kickoff Mo der ersten Woche
 - Mid-Sprint-Check Fr der ersten Woche
 - Sprint-Review Mo der dritten Woche (gleichzeitig naechster Kickoff)
-- Sprint-Plaene in `docs/sprints/`
+- Sprint-Plaene in `04-operations/sprints/`
 - Decisions in `decisions/` mit 30-Tage Outcome-Review
-- Meeting-Notes in `docs/meetings/`
+- Meeting-Notes in `05-meetings/`
 
 ## Team-Rollen (Stand 07.05.2026)
 
@@ -88,7 +88,7 @@ Skills triggern auf Keywords. Triggers stehen im Frontmatter der SKILL.md.
 - Laureen = Assistentin + Marketing Manager (eigene Bahn)
 - Junior Dev (KI-Stelle) = TBD, Profil GitHub + Python + Claude Code, Marcel als Kandidat
 
-Volle Permission-Matrix in `docs/team-permissions.md`.
+Volle Permission-Matrix in `00-start-here/team-permissions.md`.
 
 ## Out-of-Scope für AI
 

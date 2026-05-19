@@ -29,40 +29,41 @@ except ImportError:
     print("requests fehlt. Installiere mit: pip install requests")
     sys.exit(1)
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LOG_FILE = REPO_ROOT / "scripts" / ".notion_mirror_log.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+LOG_FILE = REPO_ROOT / "07-tech" / "scripts" / ".notion_mirror_log.json"
 NOTION_API = "https://api.notion.com/v1"
 NOTION_VERSION = "2022-06-28"
 
-# Welche Docs werden gemirrort, mit Notion-Titel
+# Welche Docs werden gemirrort, mit Notion-Titel.
+# Nach Refactor 19.05.2026: Pfade alle aus den numbered top-level Folders.
 DOCS_TO_MIRROR = [
     {
-        "path": "docs/team-permissions.md",
+        "path": "00-start-here/team-permissions.md",
         "title": "Team-Permissions (mala markets)",
         "icon": "🔑",
     },
     {
-        "path": "docs/sprints/2026-kw21-22-icp-kunden.md",
+        "path": "04-operations/sprints/2026-kw21-22-icp-kunden.md",
         "title": "Sprint KW21+22, ICP + Kunden-Prozesse",
         "icon": "🏃",
     },
     {
-        "path": "docs/onboarding.md",
+        "path": "00-start-here/onboarding.md",
         "title": "Mala-Brain Onboarding",
         "icon": "📘",
     },
     {
-        "path": "docs/icp/template.md",
+        "path": "01-strategy/icp/template.md",
         "title": "ICP-Template (Skeleton für Lars)",
         "icon": "🎯",
     },
     {
-        "path": "docs/meetings/2026-05-19-sprint-kickoff.md",
+        "path": "05-meetings/2026-05-19-sprint-kickoff.md",
         "title": "Sprint-Kickoff Call, 19.05.2026",
         "icon": "📝",
     },
     {
-        "path": "decisions/2026-05-19-sprint-kickoff.md",
+        "path": "01-strategy/decisions/2026-05-19-sprint-kickoff.md",
         "title": "Decisions Sprint-Kickoff, 19.05.2026",
         "icon": "⚖️",
     },

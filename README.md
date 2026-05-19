@@ -4,7 +4,26 @@
 >
 > **Master Project Management Plan:** [PROJECT-MANAGEMENT.md](PROJECT-MANAGEMENT.md) (alles was wir tracken, Status pro Task, Owner, Deadlines)
 >
-> **Setup für Dieter (Anfänger):** [docs/dieter-claude-code-setup.md](docs/dieter-claude-code-setup.md) (Schritt-für-Schritt Claude Code plus GitHub auf dem PC)
+> **Repo-Struktur und Notion-Mapping:** [STRUCTURE.md](STRUCTURE.md) (9 Top-Level-Ordner, jeder spiegelt sich in Notion)
+>
+> **Neu im Team? Start hier:** [00-start-here/](00-start-here/) (Onboarding, Claude-Code-Setup, Workflow, Permissions)
+
+---
+
+## Hauptstruktur
+
+| Ordner | Was lebt hier | Notion |
+|---|---|---|
+| [`00-start-here/`](00-start-here/) | Onboarding, Setup, Permissions | 🚀 00 Start Here |
+| [`01-strategy/`](01-strategy/) | Vision, ICP, Strategy Decisions, Positioning | 🎯 01 Strategy |
+| [`02-sales/`](02-sales/) | Pipeline, Outbound, CRM-Bridges, ICP-Match | 💼 02 Sales |
+| [`03-marketing/`](03-marketing/) | Content, Ads, Voice-Library, Landing-Pages | 📣 03 Marketing |
+| [`04-operations/`](04-operations/) | Customers, Playbooks, Sprints (Dieter-Hauptbereich) | ⚙️ 04 Operations |
+| [`05-meetings/`](05-meetings/) | Meeting-Notes plus Raw-Transkripte | 📝 05 Meetings |
+| [`06-finance/`](06-finance/) | P&L, Margin, Retainer (restricted) | 💰 06 Finance |
+| [`07-tech/`](07-tech/) | Brain-Architektur, Skripte, Skills, Workflows | 🔧 07 Tech |
+| [`08-knowledge/`](08-knowledge/) | Externes Wissen, Mentor-Referenzen, Frameworks | 📚 08 Knowledge |
+| [`decks/`](decks/) | Pitches plus Praesentationen | 🎤 Decks |
 
 ---
 
@@ -34,7 +53,7 @@ Quelle: https://x.com/garrytan/status/2042925773300908103
 - Verhindert Vendor-Lock-in (kein WeWeb/Xano-Hostage)
 - Ermöglicht Skill-Sharing über das Team (war vorher das Problem: Lars und Matteo hatten Skills nur lokal in Cloud-Webapp)
 - Macht AI-Modell-Upgrades trivial (in 30 Min statt 3 Wochen)
-- Skaliert mit Junior-Hires (sie lesen `CLAUDE.md` + `docs/architecture.md` und können sofort starten)
+- Skaliert mit Junior-Hires (sie lesen `CLAUDE.md` + `07-tech/architecture.md` und können sofort starten)
 - 20–30 % höhere AI-Effizienz durch sauberen Kontext (Cloud bekommt nur was relevant ist, kein Müll)
 
 **EO Exchange 11.05.2026:** Christoph hält dazu einen Vortrag mit dem Garry-Tan-Pattern als Backbone. Live-Demo mit Brain v3.
@@ -55,53 +74,40 @@ Dropbox (nur Dateien / Long-Form Content)
 3. Cloud liest Notion-Page, findet Dropbox-File-Link (wenn nötig)
 4. Cloud arbeitet mit nur den relevanten Files, ohne Müll-Kontext
 
-## Folder-Struktur
+## Stand 19.05.2026
 
-| Folder | Zweck |
-|---|---|
-| `decisions/` | Strategische Decisions mit 30-Tage Outcome-Review (eine pro File, YYYY-MM-DD-thema.md) |
-| `decks/` | Pitches und Praesentationen (Mala Digital Twin Deck live: chris1928a.github.io/mala-brain/decks/digital-twin/) |
-| `docs/` | Architektur-Doku, Voice-Rules, Linking-Konventionen, Team-Permissions, Onboarding |
-| `docs/icp/` | ICP-Profile und Template fuer Lars Founder-Interviews |
-| `docs/meetings/` | Strukturierte Meeting-Notes pro Call (YYYY-MM-DD-thema.md) |
-| `docs/sprints/` | Sprint-Plaene pro 2-Wochen-Sprint (YYYY-kw##-##-thema.md) |
-| `skills/` | Alle mala-Skills, jeder Skill hat eigenes Folder mit `SKILL.md` |
-| `skills/_shared/` | Geteilte Voice-Rules und Notion-Defaults fuer alle Skills |
-| `scripts/` | Python/Shell-Scripts fuer Automation (z. B. notion_mirror_push.py) |
-| `memory/` | Cross-Session Memory-Files (MEMORY.md als Index) |
-| `workflows/` | Wiederverwendbare AI-Workflows (z. B. Call-Analytics) |
-| `.claude/` | Cloud Code Settings + Project-Level CLAUDE.md |
+Aktueller Sprint: KW21+22, Repo plus Notion-Mirror Kollab-Test mit Dieter. Sprint-Plan in [04-operations/sprints/2026-kw21-22-icp-kunden.md](04-operations/sprints/2026-kw21-22-icp-kunden.md).
 
-## Stand 19.05.2026 (Sprint-Kickoff)
-
-Aktueller Sprint: KW21+22, Thema ICP-Definition + Kunden-Prozess-Automatisierung. Sprint-Plan in [docs/sprints/2026-kw21-22-icp-kunden.md](docs/sprints/2026-kw21-22-icp-kunden.md).
-
-Letzter Call: [docs/meetings/2026-05-19-sprint-kickoff.md](docs/meetings/2026-05-19-sprint-kickoff.md). Decisions in [decisions/2026-05-19-sprint-kickoff.md](decisions/2026-05-19-sprint-kickoff.md).
+Letzter Call: [05-meetings/2026-05-19-sprint-kickoff.md](05-meetings/2026-05-19-sprint-kickoff.md). Decisions in [01-strategy/decisions/2026-05-19-sprint-kickoff.md](01-strategy/decisions/2026-05-19-sprint-kickoff.md).
 
 ## Quick-Reference
 
-- **Onboarding fuer neue Team-Member:** [docs/onboarding.md](docs/onboarding.md)
-- **Team-Permissions (9 Rollen):** [docs/team-permissions.md](docs/team-permissions.md)
-- **Aktueller Sprint:** [docs/sprints/2026-kw21-22-icp-kunden.md](docs/sprints/2026-kw21-22-icp-kunden.md)
-- **ICP-Template fuer Lars:** [docs/icp/template.md](docs/icp/template.md)
-- **Decisions-Log:** [decisions/](decisions/)
-- **Meeting-Notes:** [docs/meetings/](docs/meetings/)
-- **Voice-Rules:** [docs/voice-rules.md](docs/voice-rules.md)
-- **Architektur-Doku:** [docs/architecture.md](docs/architecture.md)
-- **Notion-Verlinkung:** [docs/notion-linking.md](docs/notion-linking.md)
-- **Dropbox-Verlinkung:** [docs/dropbox-linking.md](docs/dropbox-linking.md)
-- **Memory-Index:** [memory/MEMORY.md](memory/MEMORY.md)
-- **Pitch-Deck Mala Digital Twin:** [chris1928a.github.io/mala-brain/decks/digital-twin/](https://chris1928a.github.io/mala-brain/decks/digital-twin/)
+- **Onboarding für neue Team-Member:** [00-start-here/onboarding.md](00-start-here/onboarding.md)
+- **Dieter Setup (Anfänger):** [00-start-here/dieter-claude-code-setup.md](00-start-here/dieter-claude-code-setup.md)
+- **Dieter Workflow:** [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md)
+- **Team-Permissions (9 Rollen):** [00-start-here/team-permissions.md](00-start-here/team-permissions.md)
+- **Notion-Token Setup (Lars):** [00-start-here/notion-token-setup.md](00-start-here/notion-token-setup.md)
+- **ICP-Template (Lars):** [01-strategy/icp/template.md](01-strategy/icp/template.md)
+- **Decisions-Log:** [01-strategy/decisions/](01-strategy/decisions/)
+- **Aktueller Sprint:** [04-operations/sprints/2026-kw21-22-icp-kunden.md](04-operations/sprints/2026-kw21-22-icp-kunden.md)
+- **Meeting-Notes:** [05-meetings/](05-meetings/)
+- **Architektur:** [07-tech/architecture.md](07-tech/architecture.md)
+- **Voice-Rules:** [07-tech/voice-rules.md](07-tech/voice-rules.md)
+- **Notion-Verlinkung:** [07-tech/notion-linking.md](07-tech/notion-linking.md)
+- **Dropbox-Verlinkung:** [07-tech/dropbox-linking.md](07-tech/dropbox-linking.md)
+- **Memory-Index:** [07-tech/memory/MEMORY.md](07-tech/memory/MEMORY.md)
+- **Notion-Push-Skript:** [07-tech/scripts/notion_mirror_push.py](07-tech/scripts/notion_mirror_push.py)
+- **Pitch-Deck:** [chris1928a.github.io/mala-brain/decks/digital-twin/](https://chris1928a.github.io/mala-brain/decks/digital-twin/)
 
 ## Wichtige Voice-Rules (Auszug)
 
 - Deutsche Umlaute Pflicht: ä ö ü ß. NIE ae oe ue ss als Ersatz.
-- Keine Em-Dashes (-). Stattdessen Komma, Punkt, Gedankenstrich (–).
+- Keine Em-Dashes. Stattdessen Komma, Punkt, Bindestrich.
 - "mala markets" immer kleingeschrieben.
 - Keine AI-Phrasen ("sicherlich", "zweifellos", "großartige Frage").
 - Direkt, knapp, natürlich. Wie ein Mensch schreiben.
 
-Volle Voice-Rules: [docs/voice-rules.md](docs/voice-rules.md)
+Volle Voice-Rules: [07-tech/voice-rules.md](07-tech/voice-rules.md)
 
 ## Updates
 

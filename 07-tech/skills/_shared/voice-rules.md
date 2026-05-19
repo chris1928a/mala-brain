@@ -1,6 +1,6 @@
 # Shared Voice Rules - alle Skills
 
-Geteilte Voice-Rules die JEDER Skill beim Start lädt. Identisch zu `docs/voice-rules.md`, aber Skill-fokussiert.
+Geteilte Voice-Rules die JEDER Skill beim Start lädt. Identisch zu `07-tech/voice-rules.md`, aber Skill-fokussiert.
 
 ## Imports in jeden Skill
 

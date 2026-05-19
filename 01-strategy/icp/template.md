@@ -1,6 +1,6 @@
 # ICP-Template, Skeleton für Lars
 
-Lars arbeitet das ICP basierend auf Founder-Interviews aus. Dieses Template strukturiert die 5-Layer-Frame-Anchors plus Buying-Signals plus Decision-Maker-Map. Sobald Lars die Founder-Interviews durch hat, wird das hier mit Inhalt gefüllt und als `docs/icp/icp-mala-v1.md` final committed.
+Lars arbeitet das ICP basierend auf Founder-Interviews aus. Dieses Template strukturiert die 5-Layer-Frame-Anchors plus Buying-Signals plus Decision-Maker-Map. Sobald Lars die Founder-Interviews durch hat, wird das hier mit Inhalt gefüllt und als `01-strategy/icp/icp-mala-v1.md` final committed.
 
 ## Wer ist das ICP?
 
@@ -69,12 +69,12 @@ Die finale ICP-Version durchläuft 3 Checks:
 
 ## Ablage finales ICP
 
-Sobald durch: `docs/icp/icp-mala-v1.md` committen. Notion-Mirror folgt. Brain-Skill `mala-icp` referenziert dann diese Datei als Master Truth.
+Sobald durch: `01-strategy/icp/icp-mala-v1.md` committen. Notion-Mirror folgt. Brain-Skill `mala-icp` referenziert dann diese Datei als Master Truth.
 
 ## Werkzeuge
 
 - Founder-Interview-Skript: TBD
-- ICP-Match-Skript: `scripts/icp_match.py` (Adaption von RC tools/icp_match_close.py)
+- ICP-Match-Skript: `07-tech/scripts/icp_match.py` (Adaption von RC tools/icp_match_close.py)
 - Buying-Signals-Tracker: in Brain-Layer 1 (sales_bridge.py)
 
 Stand: 19.05.2026

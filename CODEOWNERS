@@ -7,28 +7,43 @@
 *                           @chris1928a
 
 # Founder-Bereiche (Lars + Matteo nur)
-/CLAUDE.md                  @chris1928a
-/README.md                  @chris1928a
-/GETTING-STARTED.md         @chris1928a
-/decks/                     @chris1928a
+/CLAUDE.md                          @chris1928a
+/README.md                          @chris1928a
+/PROJECT-MANAGEMENT.md              @chris1928a
+/STRUCTURE.md                       @chris1928a
+/decks/                             @chris1928a
 
-# PM-Bereiche (Dieter primär, Founder review)
-/customers/                 @chris1928a
-/playbooks/                 @chris1928a
-/docs/sprints/              @chris1928a
-/docs/meetings/             @chris1928a
+# Onboarding (Chris pflegt)
+/00-start-here/                     @chris1928a
 
-# Strategie-Bereiche (Lars exklusiv)
-/docs/icp/                  @chris1928a
-/decisions/                 @chris1928a
+# Strategy (Lars exklusiv für ICP plus Decisions)
+/01-strategy/icp/                   @chris1928a
+/01-strategy/decisions/             @chris1928a
+/01-strategy/                       @chris1928a
 
-# Architektur (Chris exklusiv)
-/docs/architecture.md       @chris1928a
-/docs/notion-linking.md     @chris1928a
-/docs/dropbox-linking.md    @chris1928a
-/docs/github-conventions.md @chris1928a
-/skills/                    @chris1928a
-/scripts/                   @chris1928a
+# Sales (Lars + Matteo)
+/02-sales/                          @chris1928a
+
+# Marketing (Matteo + Laureen)
+/03-marketing/                      @chris1928a
+
+# Operations (Dieter primär, Founder review)
+/04-operations/customers/           @chris1928a
+/04-operations/playbooks/           @chris1928a
+/04-operations/sprints/             @chris1928a
+/04-operations/                     @chris1928a
+
+# Meetings (wer dabei war)
+/05-meetings/                       @chris1928a
+
+# Finance (RESTRICTED, nur Lars + Chris)
+/06-finance/                        @chris1928a
+
+# Tech (Chris exklusiv, Junior Dev ab Hire)
+/07-tech/                           @chris1928a
+
+# Knowledge (offen, Lars + Matteo)
+/08-knowledge/                      @chris1928a
 
 # Sobald malamarkets-User + lars-handle + matteo-handle + dieter-handle
 # als GitHub-Accounts bekannt: hier ersetzen.

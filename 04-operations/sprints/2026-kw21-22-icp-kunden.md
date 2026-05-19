@@ -25,7 +25,7 @@
 
 - [ ] Lars hat Chris in `chris1928a/mala-brain` als Collaborator und in Mala-Notion mit Editor-Rechten
 - [ ] Lars hat den Internal Connection Token an Chris übergeben
-- [ ] Chris hat den Notion-Mirror live gepushed via `scripts/notion_mirror_push.py`
+- [ ] Chris hat den Notion-Mirror live gepushed via `07-tech/scripts/notion_mirror_push.py`
 - [ ] Dieter hat mindestens 3 Pull Requests gegen das Repo gemacht
 - [ ] Dieter hat mindestens 3 Edits in der Notion-PM-Page gemacht
 - [ ] Matteo hat mindestens 1 Transkript automatisch ins Brain gefüttert
@@ -36,7 +36,7 @@
 
 Diese laufen im Hintergrund. Wenn sie sich verzögern wegen der Mission, ist das OK.
 
-- ICP-Definition (Lars arbeitet an Founder-Interviews, Skeleton liegt in `docs/icp/template.md`)
+- ICP-Definition (Lars arbeitet an Founder-Interviews, Skeleton liegt in `01-strategy/icp/template.md`)
 - Top-3 Kunden-Prozesse evaluieren für Sprint KW23+24 (Matteo plus Dieter scopen)
 - Grafikdesigner-Ersatz screening (Lars plus Matteo)
 - Marcel KI-Werkstudent Interview (Lars plus Matteo)
@@ -67,8 +67,8 @@ Diese laufen im Hintergrund. Wenn sie sich verzögern wegen der Mission, ist das
 ## Definition of Done für die Mission (siehe oben, gesammelt)
 
 1. Mission-Checkliste aus dem `## Die EINE Mission` Block alle abgehakt
-2. Sprint-Review-Doc liegt in `docs/sprints/2026-06-02-review.md` mit klarer Empfehlung (System produktionsreif ja/nein, was als Nächstes)
-3. Sprint KW23+24 ist im Repo gescoped (`docs/sprints/2026-kw23-24-*.md`)
+2. Sprint-Review-Doc liegt in `04-operations/sprints/2026-06-02-review.md` mit klarer Empfehlung (System produktionsreif ja/nein, was als Nächstes)
+3. Sprint KW23+24 ist im Repo gescoped (`04-operations/sprints/2026-kw23-24-*.md`)
 
 ## Pending Cross-Sprint
 

@@ -7,9 +7,9 @@ Wie Dieter im mala-brain Repo arbeitet. Format: was wo liegt, was Dieter bewegt,
 | Folder | Was Dieter da macht | Wer reviewed |
 |---|---|---|
 | `customers/<kunde>/` | Pro Mandat ein Folder. Status, Capa, Decisions, Risk-Flags. | Lars für Pricing-Themen, Matteo für Execution |
-| `playbooks/` | Operative Standards. Onboarding-Flow, PPC-Bid-Strategy, Reporting-Template. | Matteo |
-| `docs/sprints/` | Sprint-Stand aktualisieren, Mid-Check, Retro | Lars + Matteo |
-| `docs/meetings/` | Meeting-Notes nach jedem Termin | wer dabei war |
+| `04-operations/playbooks/` | Operative Standards. Onboarding-Flow, PPC-Bid-Strategy, Reporting-Template. | Matteo |
+| `04-operations/sprints/` | Sprint-Stand aktualisieren, Mid-Check, Retro | Lars + Matteo |
+| `05-meetings/` | Meeting-Notes nach jedem Termin | wer dabei war |
 | `decisions/` | Decision-Logs für PM-Themen (Capa, Hire, Customer-Escalation) | Lars |
 
 ## Wo Dieter NICHT direkt schreibt
@@ -44,7 +44,7 @@ Notion ist die Lese-und-Schreib-Schicht für PM-Sachen. Dieter editiert direkt i
 - Mandate-Sub-Pages (eine pro aktiven Kunden, gespiegelt aus customers/)
 - Meeting-Notes (kommen via Mirror aus dem Repo, Dieter kann ergänzen)
 
-Notion-Mirror wird sobald Schritt 1 durch via `scripts/notion_mirror_push.py` automatisch synct. Dieter muss nicht manuell spiegeln.
+Notion-Mirror wird sobald Schritt 1 durch via `07-tech/scripts/notion_mirror_push.py` automatisch synct. Dieter muss nicht manuell spiegeln.
 
 ## Erste 3 Test-PRs für Dieter
 
@@ -54,14 +54,14 @@ Damit klar wird ob das System für Dieter funktioniert:
 
 1. Such dir einen aktiven Mandat aus
 2. Branch `customer/<kundenname>` anlegen
-3. Folder `customers/<kundenname>/` mit `profile.md` (Template in `customers/_TEMPLATE/profile.md`) ausfüllen
+3. Folder `04-operations/customers/<kundenname>/` mit `profile.md` (Template in `04-operations/customers/_TEMPLATE/profile.md`) ausfüllen
 4. PR mit Matteo als Reviewer
 
 ### PR 2, Playbook ergänzen
 
 1. Such dir einen Mala-Standard-Prozess aus (z. B. Client-Onboarding)
 2. Branch `pm/playbook-client-onboarding`
-3. `playbooks/client-onboarding.md` füllen mit dem Schritt-für-Schritt wie ihr es heute macht
+3. `04-operations/playbooks/client-onboarding.md` füllen mit dem Schritt-für-Schritt wie ihr es heute macht
 4. PR mit Matteo als Reviewer
 
 ### PR 3, eigene Capa-Auslastung als Decision-Log
@@ -76,7 +76,7 @@ Wenn diese 3 PRs in KW21 mergen, ist das System für Dieter live.
 
 - Merge-Konflikte: nicht selber lösen, kurz Chris pingen
 - Permissions stimmen nicht: Lars fragen, oder Issue im Repo
-- Notion-Mirror zeigt alten Stand: `scripts/notion_mirror_push.py` neu laufen lassen
+- Notion-Mirror zeigt alten Stand: `07-tech/scripts/notion_mirror_push.py` neu laufen lassen
 - Branch-Namen verwirrend: in diesem Doc oben nachschauen
 
 Stand: 19.05.2026.

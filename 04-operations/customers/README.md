@@ -14,11 +14,11 @@ Ein Folder pro aktiven Mandat. Dieter pflegt diesen Bereich als PM.
 - **Schreiben:** Dieter + zugeordneter Marketplace Manager
 - **Mergen:** Lars (Pricing) plus Matteo (Execution)
 
-Volle Permissions-Map in `docs/team-permissions.md`.
+Volle Permissions-Map in `00-start-here/team-permissions.md`.
 
 ## Notion-Mirror
 
-Jeder customer-Folder wird in Notion gespiegelt unter PM-Page → Mandate. Mirror via `scripts/notion_mirror_push.py` (TBD ab Schritt 2 nächste Woche).
+Jeder customer-Folder wird in Notion gespiegelt unter PM-Page → Mandate. Mirror via `07-tech/scripts/notion_mirror_push.py` (TBD ab Schritt 2 nächste Woche).
 
 ## Wenn ein Mandat endet
 

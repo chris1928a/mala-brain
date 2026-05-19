@@ -43,7 +43,7 @@ Notion-Connections sind workspace-spezifisch. Chris hat schon eine Claude-Connec
 - Slack-DM an Chris, oder per 1Password Share
 
 Sobald Chris den Token hat:
-- Notion-Mirror geht live via `scripts/notion_mirror_push.py`
+- Notion-Mirror geht live via `07-tech/scripts/notion_mirror_push.py`
 - Brain kann automatisch Transkripte lesen, Decisions ablegen, Sprint-Plans synchronisieren
 
 ## Bei Fehlern

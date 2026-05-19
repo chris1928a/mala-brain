@@ -29,7 +29,7 @@ Pages die mehrere Skills referenzieren:
 
 ## Setup-Schritte (einmalig nach Notion-Workspace-Aufbau)
 
-1. Lars + Matteo strukturieren Notion-Workspace nach `docs/notion-linking.md`
+1. Lars + Matteo strukturieren Notion-Workspace nach `07-tech/notion-linking.md`
 2. URLs in dieses File eintragen
 3. Skill-Frontmatter URLs aktualisieren (sed-replace TBD-URLs)
 4. Test-Run mit einem Skill um Verlinkung zu validieren

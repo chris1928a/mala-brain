@@ -37,7 +37,7 @@ Workflows laufen auf:
 - Cloud Code lokal für manual Triggers
 - NICHT N8N (deprecated)
 
-Server-Setup in `docs/architecture.md`.
+Server-Setup in `07-tech/architecture.md`.
 
 ## Testing
 

@@ -126,12 +126,12 @@ npm install -g @anthropic-ai/claude-code
 
 ## Schritt 7, deine erste Änderung machen und pushen
 
-So machst du jetzt deine ersten Test-PRs. Anleitung was du konkret machst steht in [docs/dieter-workflow.md](dieter-workflow.md). Hier der Mechanik-Teil:
+So machst du jetzt deine ersten Test-PRs. Anleitung was du konkret machst steht in [00-start-here/dieter-workflow.md](dieter-workflow.md). Hier der Mechanik-Teil:
 
 ### Eine Datei ändern
 
 1. Geh in deinen Mala-Brain-Ordner im Datei-Explorer
-2. Such die Datei die du ändern willst (z. B. `customers/_TEMPLATE/profile.md` als Vorlage für deinen ersten Kunden)
+2. Such die Datei die du ändern willst (z. B. `04-operations/customers/_TEMPLATE/profile.md` als Vorlage für deinen ersten Kunden)
 3. Mach eine Kopie oder erstelle eine neue Datei mit dem Kundennamen
 4. Öffne die Datei mit einem Text-Editor (Notepad reicht, besser Visual Studio Code oder die Claude-Code-Edit-Funktion)
 5. Ändere oder ergänze Inhalt
@@ -193,6 +193,6 @@ Wenn andere im Repo Änderungen gemacht haben, willst du die auf deinen PC ziehe
 
 ## Was als nächstes
 
-Jetzt wo das Setup steht, du machst deine 3 Test-PRs nach [docs/dieter-workflow.md](dieter-workflow.md). Bei Fragen Matteo oder Chris pingen, kein Risiko zu fragen.
+Jetzt wo das Setup steht, du machst deine 3 Test-PRs nach [00-start-here/dieter-workflow.md](dieter-workflow.md). Bei Fragen Matteo oder Chris pingen, kein Risiko zu fragen.
 
 Stand: 19.05.2026.

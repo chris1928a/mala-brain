@@ -2,7 +2,7 @@
 
 Master-Plan für mala markets Brain plus Operations. Alles was wir vorhaben tracken wir hier in diesem File. Status pro Item, Owner, Deadline, Link zu Detail-Files.
 
-**Single Source of Truth für PM ist Notion** (siehe `docs/notion-token-setup.md`), aber dieser Plan ist die GitHub-Spiegel-Version damit alles diff-bar und versioniert ist.
+**Single Source of Truth für PM ist Notion** (siehe `00-start-here/notion-token-setup.md`), aber dieser Plan ist die GitHub-Spiegel-Version damit alles diff-bar und versioniert ist.
 
 **Gesamtplan-Vision:** [Mala Digital Company Twin Deck](https://chris1928a.github.io/mala-brain/decks/digital-twin/) (16 Slides, 2-Jahres-Roadmap zum 500k-Mandat)
 
@@ -18,14 +18,14 @@ Das ist der kritische Test. Wenn Dieter das System eigenständig benutzen kann, 
 
 | Task | Owner | Status | Link |
 |---|---|---|---|
-| Dieter installiert Claude Code auf seinem PC | Dieter (Setup von Matteo begleitet) | open | [docs/dieter-claude-code-setup.md](docs/dieter-claude-code-setup.md) |
-| Dieter erstellt GitHub-Account (falls noch nicht da) | Dieter | open | [docs/dieter-claude-code-setup.md](docs/dieter-claude-code-setup.md) |
+| Dieter installiert Claude Code auf seinem PC | Dieter (Setup von Matteo begleitet) | open | [00-start-here/dieter-claude-code-setup.md](00-start-here/dieter-claude-code-setup.md) |
+| Dieter erstellt GitHub-Account (falls noch nicht da) | Dieter | open | [00-start-here/dieter-claude-code-setup.md](00-start-here/dieter-claude-code-setup.md) |
 | Dieter akzeptiert mala-brain Repo-Invite | Dieter | open | github.com/chris1928a/mala-brain/invitations |
-| Dieter klont das Repo lokal mit GitHub Desktop | Dieter | open | [docs/dieter-claude-code-setup.md](docs/dieter-claude-code-setup.md#schritt-4) |
-| Dieter macht erste Test-Branch und PR 1 (customer profile) | Dieter | open | [docs/dieter-workflow.md](docs/dieter-workflow.md#pr-1-eigener-customer-folder-anlegen) |
-| Dieter macht PR 2 (playbook client-onboarding) | Dieter | open | [docs/dieter-workflow.md](docs/dieter-workflow.md#pr-2-playbook-ergaenzen) |
-| Dieter macht PR 3 (capa-week-21 Decision) | Dieter | open | [docs/dieter-workflow.md](docs/dieter-workflow.md#pr-3-eigene-capa-auslastung-als-decision-log) |
-| Sprint-Mid-Check Fr 23.05.: was funktioniert, was hakt | Group | open | TBD docs/meetings/2026-05-23-mid-check.md |
+| Dieter klont das Repo lokal mit GitHub Desktop | Dieter | open | [00-start-here/dieter-claude-code-setup.md](00-start-here/dieter-claude-code-setup.md#schritt-4) |
+| Dieter macht erste Test-Branch und PR 1 (customer profile) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-1-eigener-customer-folder-anlegen) |
+| Dieter macht PR 2 (playbook client-onboarding) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-2-playbook-ergaenzen) |
+| Dieter macht PR 3 (capa-week-21 Decision) | Dieter | open | [00-start-here/dieter-workflow.md](00-start-here/dieter-workflow.md#pr-3-eigene-capa-auslastung-als-decision-log) |
+| Sprint-Mid-Check Fr 23.05.: was funktioniert, was hakt | Group | open | TBD 05-meetings/2026-05-23-mid-check.md |
 
 ### Phase 0.2, Lars plus Matteo geben Chris vollen Zugriff
 
@@ -35,7 +35,7 @@ Damit Chris den vollen Stand sehen und Notion-Mirror bauen kann.
 |---|---|---|
 | Lars added `chris1928a` als Admin im Repo (Settings → Collaborators) | Lars | open |
 | Lars added `chris@erlerventures.org` als Editor in Notion-PM-Page | Lars | open |
-| Lars erstellt Internal Connection Token für Claude in Mala-Notion ([docs/notion-token-setup.md](docs/notion-token-setup.md)) | Lars | open |
+| Lars erstellt Internal Connection Token für Claude in Mala-Notion ([00-start-here/notion-token-setup.md](00-start-here/notion-token-setup.md)) | Lars | open |
 | Token via Slack-DM an Chris (nicht in Gruppe) | Lars | open |
 | Lars plus Matteo committen alle lokalen Mala-Sachen ins Repo (falls Local-State ≠ Repo) | Lars, Matteo | open |
 
@@ -45,9 +45,9 @@ Sobald Phase 0.2 durch.
 
 | Task | Owner | Status |
 |---|---|---|
-| Chris pushed via `scripts/notion_mirror_push.py` mit Token | Chris | open, blockt auf Phase 0.2 |
+| Chris pushed via `07-tech/scripts/notion_mirror_push.py` mit Token | Chris | open, blockt auf Phase 0.2 |
 | 6 Notion-Pages unter PM-Page erstellt (Permissions, Sprint, Onboarding, ICP, Meeting, Decisions) | Chris | open |
-| URLs in `scripts/.notion_mirror_log.json` geloggt | Chris | open |
+| URLs in `07-tech/scripts/.notion_mirror_log.json` geloggt | Chris | open |
 
 ### Phase 0.4, Sprint-Review KW22
 
@@ -56,7 +56,7 @@ Sobald Phase 0.2 durch.
 | Mid-Sprint-Cowork Fr 23.05. | Lars, Matteo, Chris | 23.05.2026 |
 | Mid-Sprint-Cowork Fr 30.05. | Lars, Matteo, Chris | 30.05.2026 |
 | Sprint-Review Mo 02.06. plus Empfehlung System produktionsreif Ja/Nein | Group | 02.06.2026 |
-| Sprint KW23+24 Plan ([docs/sprints/2026-kw23-24-*.md](docs/sprints/)) gescoped | Chris | 02.06.2026 |
+| Sprint KW23+24 Plan ([04-operations/sprints/2026-kw23-24-*.md](04-operations/sprints/)) gescoped | Chris | 02.06.2026 |
 
 ---
 
@@ -70,7 +70,7 @@ Themen (TBD nach Sprint-Review):
 - Asset Foundation Sprint (LP plus Hook plus 3 Ad-Variationen)
 - Erster Meta Test mit 3-5k Budget
 
-Detail-Plan kommt am 02.06. als `docs/sprints/2026-kw23-24-asset-foundation.md`.
+Detail-Plan kommt am 02.06. als `04-operations/sprints/2026-kw23-24-asset-foundation.md`.
 
 ---
 
@@ -92,13 +92,13 @@ Detail-Plan kommt am 02.06. als `docs/sprints/2026-kw23-24-asset-foundation.md`.
 
 ## Locked Decisions
 
-- [19.05.2026 Sprint-Kickoff (8 Decisions)](decisions/2026-05-19-sprint-kickoff.md)
+- [19.05.2026 Sprint-Kickoff (8 Decisions)](01-strategy/decisions/2026-05-19-sprint-kickoff.md)
 
-Neue Decisions immer als File in `decisions/YYYY-MM-DD-thema.md`. 30-Tage-Outcome-Review-Datum nicht vergessen.
+Neue Decisions immer als File in `01-strategy/decisions/YYYY-MM-DD-thema.md`. 30-Tage-Outcome-Review-Datum nicht vergessen.
 
 ## Meeting-Log
 
-- [19.05.2026 Sprint-Kickoff Call](docs/meetings/2026-05-19-sprint-kickoff.md) plus [Raw Gemini-Notes](docs/meetings/raw/2026-05-19-gemini-notes.md)
+- [19.05.2026 Sprint-Kickoff Call](05-meetings/2026-05-19-sprint-kickoff.md) plus [Raw Gemini-Notes](05-meetings/raw/2026-05-19-gemini-notes.md)
 - Mid-Sprint-Check Fr 23.05. (TBD)
 - Mid-Sprint-Check Fr 30.05. (TBD)
 - Sprint-Review Mo 02.06. (TBD)
@@ -118,7 +118,7 @@ Bei Done: dazu auch das Datum in Klammern, z. B. `done (23.05.)`.
 
 ## Wer trackt was
 
-- **Chris:** dieser Plan plus Notion-Mirror plus alles unter `scripts/` und `docs/`
+- **Chris:** dieser Plan plus Notion-Mirror plus alles unter `07-tech/`
 - **Lars:** Strategische Decisions plus ICP plus Sales plus Finanzen
 - **Matteo:** Operations plus Marketing plus Team-Onboarding (treibt Dieter)
 - **Dieter:** PM-Status pro Mandat plus Capa-Auslastung plus Customer-Map
