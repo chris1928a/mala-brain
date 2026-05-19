@@ -1,5 +1,11 @@
 # mala brain - v3 Cloud-Architektur Template
 
+> **Diese Woche neu im Repo, lest zuerst:** [GETTING-STARTED.md](GETTING-STARTED.md)
+> Zwei Schritte für Lars und Matteo, mehr kommt nächste Woche.
+
+---
+
+
 Brain-Architektur-Template für mala markets, abgeleitet aus Christoph Erlers Brain v3 Setup. Single Source of Truth für alle AI-Assistenten, Skills und Workflows.
 
 ## Was ist das?

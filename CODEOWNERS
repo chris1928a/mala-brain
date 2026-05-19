@@ -1,0 +1,38 @@
+# GitHub CODEOWNERS für chris1928a/mala-brain
+# Format: <path> <github-handles>
+# Owners werden automatisch als Reviewer auf PRs gesetzt.
+# Stand: 19.05.2026. Basiert auf docs/team-permissions.md.
+
+# Default Owner aller Dateien
+*                           @chris1928a
+
+# Founder-Bereiche (Lars + Matteo nur)
+/CLAUDE.md                  @chris1928a
+/README.md                  @chris1928a
+/GETTING-STARTED.md         @chris1928a
+/decks/                     @chris1928a
+
+# PM-Bereiche (Dieter primär, Founder review)
+/customers/                 @chris1928a
+/playbooks/                 @chris1928a
+/docs/sprints/              @chris1928a
+/docs/meetings/             @chris1928a
+
+# Strategie-Bereiche (Lars exklusiv)
+/docs/icp/                  @chris1928a
+/decisions/                 @chris1928a
+
+# Architektur (Chris exklusiv)
+/docs/architecture.md       @chris1928a
+/docs/notion-linking.md     @chris1928a
+/docs/dropbox-linking.md    @chris1928a
+/docs/github-conventions.md @chris1928a
+/skills/                    @chris1928a
+/scripts/                   @chris1928a
+
+# Sobald malamarkets-User + lars-handle + matteo-handle + dieter-handle
+# als GitHub-Accounts bekannt: hier ersetzen.
+# Beispiel:
+# /customers/  @dieter-handle @matteo-handle
+# /playbooks/  @matteo-handle
+# /docs/icp/   @lars-handle
