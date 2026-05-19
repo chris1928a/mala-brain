@@ -38,6 +38,7 @@ Damit Chris den vollen Stand sehen und Notion-Mirror bauen kann.
 | Lars erstellt Internal Connection Token für Claude in Mala-Notion ([00-start-here/notion-token-setup.md](00-start-here/notion-token-setup.md)) | Lars | open |
 | Token via Slack-DM an Chris (nicht in Gruppe) | Lars | open |
 | Lars plus Matteo committen alle lokalen Mala-Sachen ins Repo (falls Local-State ≠ Repo) | Lars, Matteo | open |
+| Hetzner-Zugang an Chris teilen (aus Call 10:02) | Lars | open |
 
 ### Phase 0.3, Notion-Mirror live
 
@@ -60,17 +61,43 @@ Sobald Phase 0.2 durch.
 
 ---
 
-## Phase 1, KW23 plus KW24 (02.06. bis 15.06.2026)
+## Phase 1, KW23 plus KW24 (02.06. bis 15.06.2026), ICP plus Marketing-Ads-Skills
 
-**Conditional:** geht nur live wenn Sprint KW21+22 erfolgreich war.
+**Conditional:** geht live wenn Sprint KW21+22 erfolgreich war.
 
-Themen (TBD nach Sprint-Review):
-- Cron Jobs auf Hetzner-Server (Sales plus Marketing plus Lead-Gen Automation)
-- ICP-Skill als Claude-Skill (Lars finalisiert Founder-Interviews als Input)
-- Asset Foundation Sprint (LP plus Hook plus 3 Ad-Variationen)
-- Erster Meta Test mit 3-5k Budget
+**Mission:** ICP finalisieren plus erste Marketing-Ads-Skills im Repo damit der KI-Experte sofort produktiv ist.
 
-Detail-Plan kommt am 02.06. als `04-operations/sprints/2026-kw23-24-asset-foundation.md`.
+Plan: [04-operations/sprints/2026-kw23-24-icp-und-ads.md](04-operations/sprints/2026-kw23-24-icp-und-ads.md)
+
+Aus Call 19.05.: "ICP - Founder Interview Leitfaden von Lars einfach weitermachen dann ueber Skill laufen lassen" plus "Asset Foundation - kann mein komplettes skill set mit euch teilen Ads, outbound, Content leadership".
+
+## Phase 2, KW25 plus KW26 (16.06. bis 29.06.2026), Cron Jobs auf Hetzner
+
+**Mission:** Hetzner-Cron-Stack live (Sales plus Marketing plus Lead-Gen Automation). Daily Brief plus Pipeline-Tracking laufen autonom. KI-Experte hat Build-Lead.
+
+Plan: [04-operations/sprints/2026-kw25-26-cron-und-sales.md](04-operations/sprints/2026-kw25-26-cron-und-sales.md)
+
+Aus Call 19.05.: "Cron jobs: Sales /Marketing automation. Sales: GTM Skills exekutern. ICP updates kommen aus founder interviews. Copy fuer Landing pages, Ads, Content fuer Knowledge leadership. Sales und marketing lassen wir automatische updates laufen um zahlen conversion (aus CRM) mit den Performances der Lead gen aktivitaeten zu matchen. Lead Gen per se ueber cron job automatisieren fuer Outbound (Email etc.)".
+
+## Phase 3, KW27 plus KW28 (30.06. bis 13.07.2026), Asset Foundation plus Meta Test
+
+**Mission:** Hook-Page live, erster Meta-Test mit 3-5k EUR Budget, Cost-per-Booked-Meeting klar gemessen.
+
+Plan: [04-operations/sprints/2026-kw27-28-asset-foundation-meta-test.md](04-operations/sprints/2026-kw27-28-asset-foundation-meta-test.md)
+
+Aus Call 19.05.: "Channels: Google Ads als basis fuer inbound perfekt in google ergebnissen. Websites visits - retargeting Meta, Video ads display geschichten - CEO bekommt gesichter auf Meta (FB & IG). Probleme adressieren. Video setup teilen mit Jungs. Cron Jobs dann fuer best converting assets in outbound".
+
+## Phase 4, ab KW29, 3-Level GitHub-Architektur ausrollen
+
+Aus Call 19.05.: "wir erstellen einen shared github folder Founder PM Dieter dann zweiter level Github fuer controlling Capa auslastung, alles resourcen kunden. Dritter level dann den Rest. Wir setzen 3 shared githubs auf, ich gebe euch anleitung auf die Architektur".
+
+Volldetail: [07-tech/3-level-github-architecture.md](07-tech/3-level-github-architecture.md)
+
+- Level 1 (Founder + PM + Dieter): existiert (dieses Repo)
+- Level 2 (Controlling + Kunden + Ressourcen): TBD `chris1928a/mala-team-controlling`
+- Level 3 (Rest): TBD `chris1928a/mala-team`
+- Cron-Sync wöchentlich Rechner zu GitHub
+- Notion-Mirror laeuft kontinuierlich
 
 ---
 
@@ -78,7 +105,7 @@ Detail-Plan kommt am 02.06. als `04-operations/sprints/2026-kw23-24-asset-founda
 
 | Thema | Wann ungefähr | Owner |
 |---|---|---|
-| 3-Level GitHub-Architektur ausrollen (Founder+PM / Controlling+Kunden / Rest) | Phase 2, ab KW25 | Chris |
+| 3-Level GitHub-Architektur ausrollen (Founder+PM / Controlling+Kunden / Rest) | Phase 4, ab KW29 (siehe [07-tech/3-level-github-architecture.md](07-tech/3-level-github-architecture.md)) | Chris |
 | Marcel Interview KI-Werkstudent | KW21 oder KW22 (parallel) | Lars, Matteo |
 | Grafikdesigner-Replacement screenen | KW21 oder KW22 (parallel) | Lars, Matteo |
 | Hetzner Cron-Setup live | Phase 1 (KW23+24) | Chris plus Junior Dev |
