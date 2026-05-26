@@ -97,3 +97,27 @@ Volle Permission-Matrix in `00-start-here/team-permissions.md`.
 - Keine destructive Git-Operations ohne User-Approval
 - Keine permanenten Löschungen (Notion-Archive, Dropbox-Trash)
 - Keine Modifikation von Security-Permissions ohne explizite User-Anweisung
+
+## Anti-Drift Regeln (PFLICHT, ergänzt 26.05.2026)
+
+Adressiert das Drift-Problem aus dem Meeting Lars/Matteo/Chris 26.05.2026: Claude Code wich gelegentlich in veraltete Ordner ab und arbeitete in alten Strukturen.
+
+**Regel 1: Single Source of Truth ist dieses Repo (`chris1928a/mala-brain`).**
+Beim Session-Start dieses CLAUDE.md zuerst lesen. Niemals auf veraltete lokale Kopien, alte Notion-Pages oder Dropbox-Subfolder zurückfallen. Wenn unklar wo Master liegt, im Repo prüfen, nicht raten.
+
+**Regel 2: Working Directory IMMER verifizieren.**
+Vor dem ersten Schreiben in einer Session: aktuelle Folder-Struktur prüfen (Top-Level-Listing). Nicht auf Annahmen verlassen wo der User sitzt oder welche Struktur grade gilt.
+
+**Regel 3: Folder-Struktur ist gesetzt.**
+Die 9 nummerierten Top-Level-Folder (`00-start-here` bis `08-knowledge`) plus `decks/` sind die einzigen erlaubten Top-Level-Buckets. Niemals selbst neue Top-Level-Folder anlegen ohne expliziten User-Auftrag. Niemals Files in Alt-Folder schreiben wenn neue Struktur existiert.
+
+**Regel 4: Notion ist Read-und-Write-UI für Team, GitHub ist Master.**
+Wenn etwas in Notion landen soll, Plan ist: erst hier im Repo, dann via Sync rüber. Direktes Notion-Schreiben nur in expliziten Notion-Workflows (Sprint-Board, PM-SSOT, Live-Operations).
+
+**Regel 5: Drift-Konflikte nicht silent lösen.**
+Wenn Claude einen Konflikt findet (z.B. Notion-Stand weicht von GitHub-Stand ab, oder Folder-Struktur passt nicht zur Doku): User melden und entscheiden lassen, nicht selbst einen Side-Branch fahren.
+
+## Verwandte Repos
+
+- `chris1928a/mala-shared` (privat): Gemeinsamer Workspace mit Chris für Audits, Meeting Notes, Decisions, Strategie-Docs. Lars und Matteo sind dort Collaborators. Audit-Antworten landen dort, nicht hier.
+- `chris1928a/erler-brain` (privat): Chris' eigener Master Knowledge Base, Vorbild für dieses Repo.
