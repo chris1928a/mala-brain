@@ -8,6 +8,7 @@ Cloud Code Skills für mala. Jeder Skill hat eigenes Folder mit `SKILL.md` + opt
 |---|---|---|
 | `relevio-dashboard` | P03 Listing-Optimierung Dashboard Build + Review | Tech (Lars) |
 | `call-analytics` | Mitarbeiter-Call-Bewertung 1-5 auf 4 Dimensionen | Operations (Matteo) |
+| `gtm/` | GTM Funnel Cluster (ICP zu Landing/Ad/Cold-Email). Master + 4 Sub-Skills: asset-foundations, landing-pages, ads, outbound. Roh-Mirror aus Chris' master-knowledge-base, Stand 2026-07-14, noch nicht an mala-Voice angepasst und ohne Claim/Deliverability-Gate | Marketing (Matteo/Lars) |
 | `_shared/` | Geteilte Voice-Rules + Notion-Defaults | Alle |
 
 ## Skill-Konvention
