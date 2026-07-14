@@ -25,6 +25,8 @@ Anlass:
 
 ## Aktuell
 
+- [`2026-07-14-lars-matteo-chris.md`](2026-07-14-lars-matteo-chris.md) - Ads-Neustart, Angebots-/Preismodell, PM-Bot Maja, GTM-Skill hinterlegt
+- [`raw/2026-07-14-gemini-notes.md`](raw/2026-07-14-gemini-notes.md) - Original Gemini-Output
 - [`2026-05-19-sprint-kickoff.md`](2026-05-19-sprint-kickoff.md) - Sprint-Kickoff Call mit Lars, Matteo, Chris
 - [`raw/2026-05-19-gemini-notes.md`](raw/2026-05-19-gemini-notes.md) - Original Gemini-Output
 
